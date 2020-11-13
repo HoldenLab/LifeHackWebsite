@@ -63,6 +63,35 @@ h1 {
   color: white;
 }
 
+.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  bottom: 35px;
+  left: 35px;
+  background: #333;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #f2f2f2;
+  display: block;
+}
+
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
 </style>
 </head>
 <body>
@@ -81,6 +110,16 @@ h1 {
     <h1 style="font-size:50px">Build Tips</h1>
     <p>Advice for building/aligning LifeHack</p>
   </div>
+</div>
+
+<div class="sidenav">
+  <a href="#Using This Document">Using This Document</a>
+  <a href="#Line Drawings">Line Drawings</a>
+  <a href="#Main Body">Main Body</a>
+  <a href="#Excitation Module">Excitation Module</a>
+  <a href="#Beam Expansion Module">Beam Expansion Module</a>
+  <a href="#Connecting Modules">Focus Shifter</a>
+  <a href="#Incubation Box/Heater">Incubation Box/Heater</a>
 </div>
 
 </body>
