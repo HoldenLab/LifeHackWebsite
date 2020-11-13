@@ -9,13 +9,20 @@ body, html {
   font-family: Arial, Helvetica, sans-serif;
   background-color:  #ddd;
 }
-  
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h1 {
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   }
 
 .page {
+  text-align: justify;
   margin-left: 25%;
   margin-right: 25%;
   font-size: 20px;
@@ -120,18 +127,25 @@ h1 {
 </div>
 
 <div class="sidenav">
-  <a href="#Main Body">Main Body</a>
-  <a href="#Excitation Module">Excitation Module</a>
-  <a href="#Beam Expansion Module">Beam Expansion Module</a>
-  <a href="#Focus Shifter">Focus Shifter</a>
-  <a href="#Incubation Box">Incubation Box</a>
+  <a href="#MainBody">Main Body</a>
+  <a href="#ExcitationModule">Excitation Module</a>
+  <a href="#BeamExpansionModule">Beam Expansion Module</a>
+  <a href="#FocusShifter">Focus Shifter</a>
+  <a href="#IncubationBox">Incubation Box</a>
 </div>
 
 <div class="page">
-  <h1>Excitiation Module</h1>
+  <h1 id="MainBody">Main Body</h1>
+  <img src="Images/Microscope-body.jpg" width="60%">
+  <h1 id="ExcitationModule">Excitiation Module</h1>
   <p>This is a long line of test text so that I can see how line wrapping works with centered text.................................................... ....................</p>
-  <img src="Images/IMG_4651.JPG" width="100%">
-  <h1>Beam Expansion Module</h1>
+  <img src="Images/Excitation-Module.jpg" width="60%">
+  <h1 id="BeamExpansionModule">Beam Expansion Module</h1>
+  <img src="Images/Beam-Expansion-Module.jpg" width="60%">
+  <h1 id="FocusShifter">Focus Shifter</h1>
+  <img src="Images/Focus-Shifter.jpg" width="60%">
+  <h1 id="IncubationBox">Incubation Box</h1>
+  <img src="Images/Incubation-Box.jpg" width="60%">
 </div>
   
 </body>
