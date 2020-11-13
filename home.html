@@ -9,6 +9,12 @@ body, html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h1 {
   text-align: center;
   font-size: 50px;
@@ -17,6 +23,8 @@ h1 {
 .page {
   margin-left: 25%;
   margin-right: 25%;
+  font-size: 20px;
+  line-height:1.6;
 }
 
 .topnav {
@@ -80,14 +88,53 @@ h1 {
 <div class="hero-image">
   <div class="hero-text">
     <h1 style="font-size:50px">LifeHack</h1>
-    <p>An Open-Source, Modular, SMLM System</p>
+    <p style="font-size:30px">An Open-Source, Modular, SMLM System</p>
   </div>
 </div>
   
 <div class="page">
-  <p>The LifeHack microscope is an open-source system designed to provide an easily modifiable, modular platform for live cell SMLM imaging. It has been contructed from comercially available and 3D printed parts to simply the build process while retaining adaptability.</p>
-  <img src="Images/Microscope-Full.JPG" width="100%">
+  <h1>What It's All About</h1>
+  <p>To many labs the significant time and expertise required to design and build a microscope is prohibitive but a hackable, home built microscope may still hold benefits that cannot be overlooked. The LifeHack microscope is an open-source system designed to provide an easily modifiable, modular platform for live cell SMLM imaging. It has been contructed from comercially available and 3D printed parts to simply the build process while retaining adaptability.</p>
+  <img src="Images/Microscope-Full.JPG" width="60%">
+  <p>The LifeHack microscope has, in many ways, a similar feature set to that of the <a href="https://www.microscope.healthcare.nikon.com/en_EU/products/super-resolution-microscopes/n-storm-super-resolution">Nikon N-STORM</a> system discussed earlier.
+<br>
+An incubator design (Figure \ref{LifeHackIncubator}) enclosing the main body of the microscope is included as part of the system with a wide array of access hatches for both sample manipulation and microscope alignment. This not only fulfils the requirement for keeping the sample at an optimal and consistent temperature but also provides almost complete thermal stability for the microscope body. This should theoretically alleviate as yet untested worries about the thermal response of the ASI RAMM frame used.
+<br>
+The Incubator is made from black acrylic and can be produced by in house workshops if properly equipped but is also readily outsourced using the CAD designs.
+<br>
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=8cm]{Figures/LifeHackIncubator.png}
+        \caption{LifeHack Incubator}
+        \label{LifeHackIncubator}
+\end{figure}
+<br>
+TIRF and HILO illumination is provided by the pair of Galvo-scanning mirrors incorporated into the excitation path after the back port of the main body (Figure \ref{LifeHackRear}). These mirrors can be angled by the application of voltage to achieve the objective TIRF illumination described previously. However, these mirrors are also capable of oscillating rapidly which allows for the beam to be scanned in circles at 100s of Hz. This enables the use of ring TIRF\cite{RingTIRF} whereby through the course of an image the beam illuminates the coverslip from all angles reducing shadowing or artifacts caused by imperfections in the coverslip or inhomogeneities in the sample.
+<br>
+3D localisation is provided by a cylindrical lens positioned in a 3D printed box immediately before the camera (Figure \ref{LifeHackRear}). This contains a rail mounting system to allow for axial adjustment of the lens position. Sliding the lens towards and away from the camera will respectively reduce and increase the severity of the astigmatism at the camera. A stronger astigmatism enables more accurate localisation in z as the ellipticity of the PSF will change more rapidly as the source position does. However, this increase in ellipticity will produce a corresponding decrease in accuracy of lateral localisations as this increases the disparity of the PSF from the ideal, rotationally symmetric form.
+<br>
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=8cm]{Figures/LifeHackRear.png}
+        \caption{LifeHack Microscope Rear View}
+        \label{LifeHackRear}
+\end{figure}
+<br>
+The Microscope is capable of providing drift correction using the ASI CRISP system approximately matching the system found on Nikon's offering. However, the LifeHack system additionally includes an infra-red camera and LED to enable brightfield imaging in this channel concurrently with fluorescence imaging. This means that image or bead based drift correction can be implemented without affecting data collection.
+<br>
+Unfortunately, the CRISP system and camera share the same spectral window and so would interfere with eachother if used simultaneously. Therefore, to provide drift correction across all three dimensions, a camera based system capable of this individually or a shift of operation from 800nm to 1050nm to avoid this conflict would be required.
+<br>
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=15cm]{Figures/LifeHackTable.png}
+        \caption{LifeHack Microscope Features}
+        \label{LifeHackTable}
+\end{figure}
+<br>
+Finally, the system is capable, in its base form, of 2 channel super-resolution imaging. This is achieved by its 4 lasers (405nm, 488nm, 561nm, 642nm, Figure \ref{LifeHackExcitation}) in the excitation module. This gives two activation and two excitation wavelengths allowing for 2 photoactivatable fluorophores to be imaged concurrently or, of course, 4 standard fluorophores if you can find an experiment that will work for that.
+</p>
 </div>
+
 
 </body>
 </html>
