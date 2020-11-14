@@ -25,7 +25,7 @@ h1 {
   text-align: justify;
   margin-left: 25%;
   margin-right: 25%;
-  font-size: 18px;
+  font-size: 15px;
   line-height:1.6;
   background-color: white;
   padding: 0.5cm 0.5cm 0.5cm 0.5cm;;
@@ -127,13 +127,13 @@ h1 {
   <a href="build-tips.html">Build Tips</a>
   <a href="https://github.com/Joshedwards222/Test/">Git Hub</a>
   <a href="https://blogs.ncl.ac.uk/holdenlab/">Holden Lab</a>
-  <div style="float:right"><p style="color:white">Josh Edwards, j.edwards11@ncl.ac.uk, November 2020</p></div>
+  <div style="float:right"><p style="color:white">Updated: November 2020</p></div>
 </div>
 
 <div class="hero-image">
   <div class="hero-text">
     <h1 style="font-size:50px">LifeHack</h1>
-    <p style="font-size:30px">An Open-Source, Modular, SMLM System</p>
+    <p style="font-size:30px">An Open-Source, Modular, SMLM Microscope</p>
   </div>
 </div>
 
@@ -148,23 +148,28 @@ h1 {
   
 <div class="page">
   <h1 id="WhatItsAllAbout">What It's All About</h1>
+  <ul>
+    <li>Full, interrogatable, 3D designs</li>
+    <li>Modular and adaptable</li>
+    <li>Live Cell and SMLM capable</li>
+    <li>Made from commercially available parts</li>
+  </ul> 
   <p>To many labs the significant time and expertise required to design and build a microscope is prohibitive. But still, a hackable, home built microscope will hold benefits that cannot be overlooked. The LifeHack microscope is an open-source system designed to provide an easily modifiable, modular platform for live cell SMLM imaging. It has been contructed from comercially available and 3D printed parts to simplify the build process while retaining adaptability.</p>
   <img src="Images/Microscope-Full.JPG" width="60%">
+  <h1 id="Designs">Designs</h1>
+  <a href="https://www.autodesk.co.uk/products/fusion-360/overview"><img src="Images/Fusion360-logo.png" width="30%"></a>
   <h1 id="Features">Features</h1>
   <p>The LifeHack microscope has, in many ways, a similar feature set to that of Nikon's <a href="https://www.microscope.healthcare.nikon.com/en_EU/products/super-resolution-microscopes/n-storm-super-resolution"> N-STORM</a> system but carries the benefit that any module may be modified without affecting the performance of the others.</p>
-  <p>
-  An incubator design enclosing the main body of the microscope is included as part of the system with a wide array of access hatches for both sample manipulation and microscope alignment. This not only fulfils the requirement for keeping living samples at an optimal and consistent temperature but also provides almost complete thermal stability for the microscope body.
-  <br>
-  TIRF and HILO illumination are provided by the incorporated pair of Galvo-scanning mirrors. These mirrors are also capable of oscillating rapidly which allows for the beam to be scanned in circles at 100s of Hz. This enables the use of ring TIRF whereby through the course of an image the beam illuminates the coverslip from all angles reducing shadowing or artifacts caused by imperfections in the coverslip or inhomogeneities in the sample.
-  <br>
-  3D localisation is provided by a cylindrical lens positioned in a 3D printed box immediately before the camera. This contains a rail mounting system to allow for axial adjustment of the lens position. Sliding the lens towards and away from the camera will respectively reduce and increase the severity of the astigmatism at the camera. A stronger astigmatism enables more accurate localisation in z as the ellipticity of the PSF will change more rapidly as the source position does. However, this increase in ellipticity will produce a corresponding decrease in accuracy of lateral localisations as this increases the disparity of the PSF from the ideal, rotationally symmetric form.
-  <br>
-  The Microscope is capable of providing drift correction using the ASI CRISP system approximately matching the system found on Nikon's offering. However, the LifeHack system additionally includes an infra-red camera and LED to enable brightfield imaging in this channel concurrently with fluorescence imaging. This means that image or bead based drift correction can be implemented without affecting data collection.
-  </p>
+  
+  <p>An incubator design enclosing the main body of the microscope is included as part of the system with a wide array of access hatches for both sample manipulation and microscope alignment. This not only fulfils the requirement for keeping living samples at an optimal and consistent temperature but also provides almost complete thermal stability for the microscope body.</p>
+  
+  <p>TIRF and HILO illumination are provided by the incorporated pair of Galvo-scanning mirrors. These mirrors are also capable of oscillating rapidly which allows for the beam to be scanned in circles at 100s of Hz. This enables the use of ring TIRF whereby through the course of an image the beam illuminates the coverslip from all angles reducing shadowing or artifacts caused by imperfections in the coverslip or inhomogeneities in the sample.</p>
+
+  <p>3D localisation is provided by a cylindrical lens positioned in a 3D printed box immediately before the camera. This contains a rail mounting system to allow for axial adjustment of the lens position. Sliding the lens towards and away from the camera will respectively reduce and increase the severity of the astigmatism at the camera. A stronger astigmatism enables more accurate localisation in z as the ellipticity of the PSF will change more rapidly as the source position does. However, this increase in ellipticity will produce a corresponding decrease in accuracy of lateral localisations as this increases the disparity of the PSF from the ideal, rotationally symmetric form.</p>
+ 
+  <p>The Microscope is capable of providing drift correction using the ASI CRISP system approximately matching the system found on Nikon's offering. However, the LifeHack system additionally includes an infra-red camera and LED to enable brightfield imaging in this channel concurrently with fluorescence imaging. This means that image or bead based drift correction can be implemented without affecting data collection.</p>
   <img src="Images/FeaturesTable.png" width="100%">
-  <p>
-  Finally, the system is capable, in its base form, of 2 channel super-resolution imaging. This is achieved by its 4 lasers (405nm, 488nm, 561nm, 642nm, Figure \ref{LifeHackExcitation}) in the excitation module. This gives two activation and two excitation wavelengths allowing for 2 photoactivatable fluorophores to be imaged concurrently or, of course, 4 standard fluorophores if you can find an experiment that will work for that.
-  </p>
+  <p>  Finally, the system is capable, in its base form, of 2 channel super-resolution imaging. This is achieved by its 4 lasers (405nm, 488nm, 561nm, 642nm, Figure \ref{LifeHackExcitation}) in the excitation module. This gives two activation and two excitation wavelengths allowing for 2 photoactivatable fluorophores to be imaged concurrently or, of course, 4 standard fluorophores if you can find an experiment that will work for that.</p>
 </div>
 
 
