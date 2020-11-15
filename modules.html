@@ -106,7 +106,7 @@ h1 {
   color: black;
 }
 
-.sidenav b {
+.sidenav q {
   text-align: right;
   padding: 6px 20px 6px 16px;
   text-decoration: none;
@@ -148,19 +148,25 @@ h1 {
   <a href="#FocusShifter">Focus Shifter</a>
   <a href="#IncubationBox">Incubation Box</a>
   <hr> 
-  <b>Project Contibutors: Josh Edwards, Seamus Holden</b>
-  <b>Website by Josh Edwards</b>
+  <q>Project Contibutors: Josh Edwards, Seamus Holden</q>
+  <q>Website by Josh Edwards</q>
   <a href="LICENCE" style="font-size:10px">Licence: MIT Licence</a>
 </div>
 
 <div class="page">
   <h1 id="Structure">Structure</h1><hr>
-  <p>The LifeHack System is organised into 3 modules:</p>
+  <p>The LifeHack System is organised into 3 main modules:</p>
   <ul>
-    <li>The Excitation module contains the the lasers and AOTF / Shutter for exposure control</li>
-    <li>The Beam Expansion module raises the excitation beam to the correct height for the back port of the microscope and</li>
+    <li><b>Excitation module:</b> Contains the the lasers and AOTF / Shutter for exposure control.</li>
+    <li><b>Beam Expansion module:</b> Raises the excitation beam to the correct height for the back port of the microscope and uses a negative/positive lens pair to expand the beam diameter.</li>
+    <li><b>Main Body:</b> Includes the necessary structure for the optical paths, sample stage and camera for imaging. This includes components to allow for ring TIRF and IR based autofocus systems. </li>
   </ul>
   <img src="Images/Module-Structure.jpg" width="40%">
+  <p>The microscope also includes two sub-modules that are associated with the <b>Main Body</b> of the system but can be encorporated separately into another system to add functionality:</p>
+  <ul>
+    <li><b>Incubation Box:</b> A custom acryllic box enclosing the main body. Includes large hatches for easy sample and hardware manipulation.</li>
+    <li><b>Focus Shifter:</b> Normally encompassed by the main body but effective with any system. Extends the working range of reflection based autofocus systems using a translatable tube lens.</li>
+  </ul>
   <h1 id="MainBody">Main Body</h1><hr>
   <img src="Images/Microscope-body.jpg" width="40%">
   <h1 id="ExcitationModule">Excitiation Module</h1><hr>
