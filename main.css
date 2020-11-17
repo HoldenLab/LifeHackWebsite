@@ -29,24 +29,24 @@ body, html {
   }
   
   .button {
-    float: right;
     border: none;
     outline: 0;
     display: block;
     padding: 1% 2%;
-    color: black;
-    background-color: #ddd;
+    color: white;
+    background-color: #333;
     text-align: center;
     cursor: pointer;
     text-decoration: none;
-    margin-top: 1%;
-    margin-right: 1%;
-    font-size: 25pt;
+    top: 0.5%;
+    right: 0.5%;
+    font-size: 22pt;
+    position: fixed;
   }
   
   .button:hover {
-    background-color: #333;
-    color: white;
+    background-color: #ddd;
+    color: black;
   }
 
   .topnav {
