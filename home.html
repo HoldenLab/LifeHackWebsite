@@ -5,10 +5,13 @@
 
   <link rel="stylesheet" type="text/css" href="main.css">
 
+  <link rel="stylesheet" type="text/css" href="menu.css">
+
 </head>
 <body>
-  
+
 <div class="topnav">
+  <a href="javascript:void(0)" onclick="openNav()">Menu</a>
   <a class="active" href="home.html">Home</a>
   <a href="modules.html">Modules</a>
   <a href="build-tips.html">Build Tips</a>
@@ -16,6 +19,40 @@
   <a href="https://blogs.ncl.ac.uk/holdenlab/">Holden Lab</a>
   <div style="float:right"><p style="color:white">Updated: November 2020</p></div>
 </div>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="grid-container">
+    <div class="grid-empty"></div>
+    <div class="hero-image-home">
+      <div class="hero-text"><h1 style="font-size:50pt">Home</h1></div>
+    </div>
+    <div class="grid-empty"></div>  
+    <div class="hero-image-modules">
+      <div class="hero-text"><h1 style="font-size:50pt">Modules</h1></div>
+    </div>
+    <div class="hero-image-buildtips">
+      <div class="hero-text"><h1 style="font-size:50pt">Build Tips</h1></div>
+    </div>
+    <div class="hero-image-github">
+      <div class="hero-text"><h1 style="font-size:50pt">Git Hub</h1></div>
+    </div>
+    <div class="grid-empty"></div>
+    <div class="hero-image-holdenlab">
+      <div class="hero-text"><h1 style="font-size:50pt">Holden Lab</h1></div>
+    </div>
+    <div class="grid-empty"></div>  
+  </div>
+</div>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
 
 <div class="hero-image">
   <div class="hero-text">
