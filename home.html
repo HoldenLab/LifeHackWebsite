@@ -42,11 +42,6 @@
 </head>
 <body onload="closeNav()">
 
-<div class="topnav">
-  <a href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
-  <div style="float:right"><p style="color:white">Updated: November 2020</p></div>
-</div>
-
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="grid-container">
@@ -58,16 +53,16 @@
     <a href="modules.html"><div class="hero-image-modules">
       <div class="hero-text"><h1 style="font-size:50pt">Modules</h1></div>
     </div></a>
-    <div class="hero-image-buildtips">
+    <a href="build-tips.html"><div class="hero-image-buildtips">
       <div class="hero-text"><h1 style="font-size:50pt">Build Tips</h1></div>
-    </div>
-    <div class="hero-image-github">
+    </div></a>
+    <a href="https://github.com/HoldenLab/LifeHack"><div class="hero-image-github">
       <div class="hero-text"><h1 style="font-size:50pt">Git Hub</h1></div>
-    </div>
+    </div></a>
     <div class="grid-empty"></div>
-    <div class="hero-image-holdenlab">
+   <a href="https://blogs.ncl.ac.uk/holdenlab/"><div class="hero-image-holdenlab">
       <div class="hero-text"><h1 style="font-size:50pt">Holden Lab</h1></div>
-    </div>
+    </div></a>
     <div class="grid-empty"></div>  
   </div>
 </div>
@@ -82,8 +77,8 @@ function closeNav() {
 </script>
 
 <div class="hero-image">
+  <a class="button" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
   <div class="hero-text">
-    <a class="button" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
     <h1 style="font-size:50px">LifeHack</h1>
     <p style="font-size:30px">An Open-Source, Modular, SMLM Microscope</p>
   </div>
@@ -93,8 +88,9 @@ function closeNav() {
   <a href="#WhatItsAllAbout">What It's All About</a>
   <a href="#Features">Features</a>
   <hr> 
-  <q>Project Contibutors: Josh Edwards, Seamus Holden</q>
-  <q>Website by Josh Edwards</q>
+  <p>Project Contibutors: Josh Edwards, Seamus Holden</p>
+  <p>Website by Josh Edwards</p>
+  <p>Updated: November 2020</p>
   <a href="LICENCE" style="font-size:10px">Licence: MIT Licence</a>
 </div>
   

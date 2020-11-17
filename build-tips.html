@@ -5,24 +5,52 @@
 
   <link rel="stylesheet" type="text/css" href="main.css">
 
-</head>
-<body>
-  
-<div class="topnav">
-  <a href="home.html">Home</a>
-  <a href="modules.html">Modules</a>
-  <a class="active" href="build-tips.html">Build Tips</a>
-  <a href="https://github.com/Joshedwards222/Test/">Git Hub</a>
-  <a href="https://blogs.ncl.ac.uk/holdenlab/">Holden Lab</a>
-  <div style="float:right"><p style="color:white">Updated: November 2020</p></div>
-</div>
+  <link rel="stylesheet" type="text/css" href="menu.css">
 
-<div class="hero-image">
-  <div class="hero-text">
-    <h1 style="font-size:50px">Build Tips</h1>
-    <p style="font-size:30px">Advice for building/aligning LifeHack</p>
+</head>
+<body onload="closeNav()">
+
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="grid-container">
+      <div class="grid-empty"></div>
+      <a href="home.html"><div class="hero-image-home">
+        <div class="hero-text"><h1 style="font-size:50pt">Home</h1></div>
+      </div></a>
+      <div class="grid-empty"></div>  
+      <a href="modules.html"><div class="hero-image-modules">
+        <div class="hero-text"><h1 style="font-size:50pt">Modules</h1></div>
+      </div></a>
+      <a href="build-tips.html"><div class="hero-image-buildtips">
+        <div class="hero-text"><h1 style="font-size:50pt">Build Tips</h1></div>
+      </div></a>
+      <a href="https://github.com/HoldenLab/LifeHack"><div class="hero-image-github">
+        <div class="hero-text"><h1 style="font-size:50pt">Git Hub</h1></div>
+      </div></a>
+      <div class="grid-empty"></div>
+     <a href="https://blogs.ncl.ac.uk/holdenlab/"><div class="hero-image-holdenlab">
+        <div class="hero-text"><h1 style="font-size:50pt">Holden Lab</h1></div>
+      </div></a>
+      <div class="grid-empty"></div>  
+    </div>
   </div>
-</div>
+  <script>
+  function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+  }
+  
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0px";
+  }
+  </script>
+  
+  <div class="hero-image">
+    <a class="button" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
+    <div class="hero-text">
+      <h1 style="font-size:50px">Build Tips</h1>
+      <p style="font-size:30px">Advice for building/aligning LifeHack</p>
+    </div>
+  </div>
 
 <div class="sidenav">
   <a href="#Using This Document">Using This Document</a>
@@ -33,8 +61,9 @@
   <a href="#Connecting Modules">Focus Shifter</a>
   <a href="#Incubation Box/Heater">Incubation Box/Heater</a>
   <hr> 
-  <q>Project Contibutors: Josh Edwards, Seamus Holden</q>
-  <q>Website by Josh Edwards</q>
+  <p>Project Contibutors: Josh Edwards, Seamus Holden</p>
+  <p>Website by Josh Edwards</p>
+  <p>Updated: November 2020</p>
   <a href="LICENCE" style="font-size:10px">Licence: MIT Licence</a>
 </div>
 
