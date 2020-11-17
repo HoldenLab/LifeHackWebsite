@@ -28,6 +28,23 @@ body, html {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 12px 27px;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .button:hover {
+    background-color: #333;
+    color: white;
+  }
+
   .topnav {
     padding-left: 0.5cm;
     padding-right: 0.25cm;
