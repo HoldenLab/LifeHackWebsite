@@ -2,21 +2,48 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" type="text/css" href="main.css">
-
   <link rel="stylesheet" type="text/css" href="menu.css">
-
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 6px 20px 6px 20px;
+    margin:auto;
+  }
+  
+  td, th {
+    width: 50%;
+    text-align: right;
+    padding: 6px 20px 6px 20px;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #ddd;
+    color:black
+  }
+  
+  tr:nth-child(1){
+    background: #333;
+    color: #f2f2f2;
+  }
+  
+  th:nth-child(2){
+    text-align: left;
+    border-left: 1px solid #333;
+  }
+  
+  td:nth-child(2){
+    text-align: left;
+    border-left: 1px solid #333;
+  }
+</style>
 </head>
-<body>
+<body onload="closeNav()">
 
 <div class="topnav">
-  <a href="javascript:void(0)" onclick="openNav()">Menu</a>
-  <a class="active" href="home.html">Home</a>
-  <a href="modules.html">Modules</a>
-  <a href="build-tips.html">Build Tips</a>
-  <a href="https://github.com/Joshedwards222/Test/">Git Hub</a>
-  <a href="https://blogs.ncl.ac.uk/holdenlab/">Holden Lab</a>
+  <a href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
   <div style="float:right"><p style="color:white">Updated: November 2020</p></div>
 </div>
 
@@ -24,13 +51,13 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="grid-container">
     <div class="grid-empty"></div>
-    <div class="hero-image-home">
+    <a href="home.html"><div class="hero-image-home">
       <div class="hero-text"><h1 style="font-size:50pt">Home</h1></div>
-    </div>
+    </div></a>
     <div class="grid-empty"></div>  
-    <div class="hero-image-modules">
+    <a href="modules.html"><div class="hero-image-modules">
       <div class="hero-text"><h1 style="font-size:50pt">Modules</h1></div>
-    </div>
+    </div></a>
     <div class="hero-image-buildtips">
       <div class="hero-text"><h1 style="font-size:50pt">Build Tips</h1></div>
     </div>
@@ -46,11 +73,11 @@
 </div>
 <script>
 function openNav() {
-  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("myNav").style.height = "100%";
 }
 
 function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
+  document.getElementById("myNav").style.height = "0px";
 }
 </script>
 
