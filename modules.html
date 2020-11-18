@@ -80,8 +80,20 @@
     <li><b>Incubation Box:</b> A custom acryllic box enclosing the main body. Includes large hatches for easy sample and hardware manipulation.</li>
     <li><b>Focus Shifter:</b> Normally encompassed by the main body but effective with any system. Extends the working range of reflection based autofocus systems using a translatable tube lens.</li>
   </ul>
+ 
   <h1 id="MainBody">Main Body</h1><hr>
-  <img src="Images/Microscope-body.jpg" width="40%">
+  <p>The main body of the microscope contains all of the hardware to fulfill the functionality of a microscope bar fluorescence excitation.</p>
+
+  <ul>
+    <li>X/Y galvo-scanning mirrors for ring TIRF/HILO</li>
+    <li>X/Y stepper and Z piezo stage</li>
+    <li>high speed, flourescence Camera</li>
+    <li>Infra-red pathway with brightfield (LED illumination + camera) and reflection based autofocus</li>
+  </ul>
+
+  <img src="Images/Microscope-body.jpg" width="60%">
+
+  <p>TIRF and HILO illumination is provided by the pair of Galvo-scanning mirrors incorporated into the excitation path after the back port of the main body. This enables the use of ring TIRF\cite{RingTIRF} whereby through the course of an image the beam illuminates the coverslip from all angles reducing shadowing or artifacts caused by imperfections in the coverslip or inhomogeneities in the sample.</p>
  
    <h1 id="ExcitationModule">Excitiation Module</h1><hr>
   <img src="Images/Excitation-Module.jpg" width="60%">
@@ -128,10 +140,12 @@
 
   <h2>Background</h2>
   <p>We use a reflection based ASI CRISP to maintain focus on our microscope. Similar to many other systems, it reflects an IR beam off a coverslip, and uses shifts in the position of this beam to maintain constant objective-slide separation by closed loop control. 
-  The limitation of this approach is that this approach only allows you to lock focus at/ very near to the coverslip, in a range &lt; 1 um for a 100x high NA objective, or optionally, to offset the lock position a fixed amount by physically displacing the autofocus device. We wanted to image cells at different heights within the same sample, so this approach was not sufficient for us. 
-  In our case the autofocus system on our custom microscope has its own beam path and tube lens, before the fluorescence path, separated by a dichroic short pass. Because the autofocus has its own tube lens we were able to produce large changes in the lock position by implementing a motorized Arduino controlled tube lens on the autofocus beam path. This effectively offsets the lock position (the coverslide) and the camera/ excitation focus by a variable amount, in our case allowing ~ 10 um of lock range on 100x NA 1.49 TIRF objective, instead of the standard &lt; 1 um with a fixed autofocus tube lens.
-  Very briefly, we mounted a 100mm focal length lens on a zoom lens housing and motorized the zoom lens with an Arduino and a stepper motor.</p>
-  <p>Code, some photos, and brief notes are supplied to help others use the same approach.</p>
+  The limitation of this approach is that this approach only allows you to lock focus at/ very near to the coverslip, in a range &lt; 1 um for a 100x high NA objective, or optionally, to offset the lock position a fixed amount by physically displacing the autofocus device. We wanted to image cells at different heights within the same sample, so this approach was not sufficient for us.</p>
+  
+  <p>In our case the autofocus system on our custom microscope has its own beam path and tube lens, before the fluorescence path, separated by a dichroic short pass. Because the autofocus has its own tube lens we were able to produce large changes in the lock position by implementing a motorized Arduino controlled tube lens on the autofocus beam path. This effectively offsets the lock position (the coverslide) and the camera/ excitation focus by a variable amount, in our case allowing ~ 10 um of lock range on 100x NA 1.49 TIRF objective, instead of the standard &lt; 1 um with a fixed autofocus tube lens.</p>
+
+  <p>Very briefly, we mounted a 100mm focal length lens on a zoom lens housing and motorized the zoom lens with an Arduino and a stepper motor.</p>
+  
   <p>Although this implementation is built around an ASI CRISP, in principle it should work for any commercial or home built autofocus system.</p>
 
   <h2>Basic instructions/ notes</h2>
