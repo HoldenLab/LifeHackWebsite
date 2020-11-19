@@ -97,15 +97,31 @@
 
   <p>A cylindrical lens positioned in a 3D printed box immediately before the camera provides <b>3D localisation by atigmatism</b>. This contains a rail mounting system to allow for axial adjustment of the lens position. Sliding the lens towards and away from the camera will respectively reduce and increase the severity of the astigmatism at the camera.</p>
 
-  <p>This module is also home to <b>refelction based autofocus</b> (ASI CRISP) and an infra-red camera and LED to enable brightfield imaging concurrently with fluorescence imaging. This means that <b>image or bead based drift correction</b> can be implemented without affecting data collection.
+  <p>This module is also home to <b>refelction based autofocus</b> (ASI CRISP) and an infra-red camera and LED to enable brightfield imaging concurrently with fluorescence imaging. This means that <b>image or bead based drift correction</b> can be implemented without affecting data collection.</p>
 
-  Unfortunately, the CRISP system and camera share the same spectral window and so would interfere with eachother if used simultaneously. Therefore, to provide drift correction across all three dimensions, a camera based system capable of this individually or a shift of operation from 800nm to 1050nm to avoid this conflict would be required.</p>
+  <p>Unfortunately, the CRISP system and camera share the same spectral window and so would interfere with eachother if used simultaneously. Therefore, to provide drift correction across all three dimensions, a camera based system capable of this individually or a shift of operation from 800nm to 1050nm to avoid this conflict would be required.</p>
+  
+   <img src="Images/Line_MainBody.jpg" width="60%">
  
    <h1 id="ExcitationModule">Excitiation Module</h1><hr>
   <img src="Images/Excitation-Module.jpg" width="60%">
+  
+  <p>Finally, the system is capable, in its base form, of <b>2 channel super-resolution imaging</b>. This is achieved by its <b>4 lasers (405nm, 488nm, 561nm, 642nm)</b> in the excitation module. This gives two activation and two excitation wavelengths allowing for 2 photoactivatable fluorophores to be imaged concurrently or, of course, 4 standard fluorophores if you can find an experiment that will work for that.</p>
+  
+  <p>The two longer wavelength lasers are <b>fibre lasers</b> which require approximately 30 minutes from turning on to reach maximum stability and hence are not suited to be switchedon and off during an experiment. This causes a problem for SMLM imaging where the microscope will need to repeatedly alternate between activation and excitation lasers. To circumvent this issue these two lasers are passed through an <b>AOTF (Acousto-OpticalTunable Filter)</b> which allows for microsecond selection of any combination of these lasers including neither or both.</p>
+  
+  <p>The two shorter wavelength lasers are <b>diode lasers</b> and have a greater stability when switched on. Because of this, and to maintain simplicity, these two lasers are not passed through  the  AOTF. The shutter at the exit of the module has millisecond responses and provides control over the excitation as a whole to enable complex experiments like time-lapses to be taken.</p>
+  
+  <p>Each laser pathway contains a mirror pair to allow for simple alignment and are kept on axis wherever possible once again for simplicity</p>
+  
+  <img src="Images/Line_Excitation.jpg" width="60%">
 
   <h1 id="BeamExpansionModule">Beam Expansion Module</h1><hr>
   <img src="Images/Beam-Expansion-Module.jpg" width="60%">
+  
+  <p>The Beam Expansion module's fundamental role is to take the output beam from the <b>Excitation module</b> and both <b>raise and broaden</b> it for input into the Main Body. The beam diameter is controlled jointly by the choice of positive lens (200mm and 400mm) focal length and the iris. A longer focal length lens selection will result in a broader beam (larger imaging area) and hence a lower power density which can then be balanced using the iris.</p>
+
+  <img src="Images/Line_Expansion.jpg" width="60%">
 
   <h1 id="FocusShifter">Focus Shifter</h1><hr>
 
@@ -163,7 +179,7 @@
 	<li> Axial magnification is proportional to the square of the lateral magnification. In order for a tube lens shift of several mm to cause sufficient focal shift, we need to use a shorter focal length tube lens for the autofocus, compared to the imaging tube lens. In our case, the (Nikon) imaging tube lens is f=200mm, and the autofocus is f=100mm, reducing the axial autofocus magnification by a factor of 4 – this gives us an ~10 um lock range.</li>
   </ul>
 
-  <h2>Photos<h/2>
+  <h2>Photos</h2>
 
   <h3>Autofocus diagram:</h3>
 
@@ -185,7 +201,14 @@
 
   <h1 id="IncubationBox">Incubation Box</h1><hr>
   <img src="Images/Incubation-Box.jpg" width="40%">
-</div>
+
+  <p>The Incuabtion Box encloses the main body of the microscope and includes a <b>wide array of access hatches</b> for both sample manipulation and microscope alignment. This not only fulfils the requirement for keeping the sample at an optimal and consistent temperature but also provides almost complete <b>thermal stability</b> for the microscope body. The Incubator is made from black acrylic and can be produced by in-house workshops if properly equipped but is also readily outsourced using the <b>CAD designs</b>.</p>
   
+  <p>The Box has been designed with large hatches on both side panels for <b>maximum acessability</b>. These are held shut both by magnets and hinge tension to ensure that they do not open accidentally. A port is also positioned for the camera so that it is not unneccesarily heated by being enclosed by the box.</p>
+  
+  <p>On the back panel, as well as an excitation beam port are 4 ports for heater hoses. Our iteration of LifeHack uses a Cube2 heater from Life Imaging Services and is able to achieve <b>X&#176;C stability</b> over long periods</p>
+  
+</div>
+
 </body>
 </html>
