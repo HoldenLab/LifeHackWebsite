@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="menu.css">
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 6px 20px 6px 20px;
+    margin:auto;
+  }
+  
+  td, th {
+    width: 50%;
+    text-align: right;
+    padding: 6px 20px 6px 20px;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #ddd;
+    color:black
+  }
+  
+  tr:nth-child(1){
+    background: #333;
+    color: #f2f2f2;
+  }
+  
+  th:nth-child(2){
+    text-align: left;
+    border-left: 1px solid #333;
+  }
+  
+  td:nth-child(2){
+    text-align: left;
+    border-left: 1px solid #333;
+  }
+</style>
+</head>
+<body onload="closeNav()">
+
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="grid-container">
+      <a href="home.html"><div class="hero-image-home">
+        <div class="hero-text"><h1 style="font-size:40pt">Home</h1></div>
+      </div></a>
+      <a href="MainBody.html"><div class="hero-image-MainBody">
+        <div class="hero-text"><h1 style="font-size:40pt">Main Body</h1></div>
+      </div></a>
+      <a href="BeamExpansion.html"><div class="hero-image-BeamExpansion">
+        <div class="hero-text"><h1 style="font-size:40pt">Beam Expansion Module</h1></div>
+      </div></a>
+      <a href="Excitation.html"><div class="hero-image-Excitation">
+        <div class="hero-text"><h1 style="font-size:40pt">Excitation Module</h1></div>
+      </div></a>
+      <a href="FocusShifter.html"><div class="hero-image-FocusShifter">
+        <div class="hero-text"><h1 style="font-size:40pt">Focus Shifter</h1></div>
+      </div></a>
+      <a href="IncubationBox.html"><div class="hero-image-IncubationBox">
+        <div class="hero-text"><h1 style="font-size:40pt">Incubation Box</h1></div>
+      </div></a>
+      <a href="https://github.com/HoldenLab/LifeHack"><div class="hero-image-github">
+        <div class="hero-text"><h1 style="font-size:40pt">Git Hub</h1></div>
+      </div></a>
+     <a href="https://blogs.ncl.ac.uk/holdenlab/"><div class="hero-image-holdenlab">
+        <div class="hero-text"><h1 style="font-size:40pt">Holden Lab</h1></div>
+      </div></a>
+      <div class="grid-empty"></div>  
+    </div>
+  </div>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0px";
+}
+</script>
+
+<div class="hero-image">
+  <a class="button" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
+  <div class="hero-text">
+    <h1 style="font-size:50px">Main Body</h1>
+    <p style="font-size:30px">Main Structure of the LifeHack System</p>
+  </div>
+</div>
+
+<div class="sidenav">
+  <a href="#WhatItsAllAbout">What It's All About</a>
+  <a href="#Features">Features</a>
+  <a href="#Structure">Structure</a>
+  <hr> 
+  <p>Project Contibutors: Josh Edwards, Seamus Holden</p>
+  <p>Website by Josh Edwards</p>
+  <p>Updated: November 2020</p>
+  <a href="LICENCE" style="font-size:10px">Licence: MIT Licence</a>
+</div>
+
+<div class="page">
+  <p>The main body of the microscope contains all of the hardware to fulfill the functionality of a microscope bar fluorescence excitation.</p>
+
+  <video src="Video/Microscope-body-animation.mp4" width="90%" controls autoplay></video>
+
+  <ul>
+    <li>X/Y galvo-scanning mirrors for ring TIRF/HILO</li>
+    <li>X/Y stepper and Z piezo stage</li>
+    <li>high speed, flourescence Camera</li>
+    <li>Infra-red pathway with brightfield (LED illumination + camera) and reflection based autofocus</li>
+  </ul>
+
+  <img src="Images/Microscope-body.jpg" width="60%">
+
+  <p><b>TIRF and HILO</b> illumination is provided by the pair of Galvo-scanning mirrors incorporated into the excitation path after the back port of the main body. This enables the use of ring TIRF\cite{RingTIRF} whereby through the course of an image the beam illuminates the coverslip from all angles reducing shadowing or artifacts caused by imperfections in the coverslip or inhomogeneities in the sample.</p>
+
+  <p>A cylindrical lens positioned in a 3D printed box immediately before the camera provides <b>3D localisation by atigmatism</b>. This contains a rail mounting system to allow for axial adjustment of the lens position. Sliding the lens towards and away from the camera will respectively reduce and increase the severity of the astigmatism at the camera.</p>
+
+  <p>This module is also home to <b>refelction based autofocus</b> (ASI CRISP) and an infra-red camera and LED to enable brightfield imaging concurrently with fluorescence imaging. This means that <b>image or bead based drift correction</b> can be implemented without affecting data collection.</p>
+
+  <p>Unfortunately, the CRISP system and camera share the same spectral window and so would interfere with eachother if used simultaneously. Therefore, to provide drift correction across all three dimensions, a camera based system capable of this individually or a shift of operation from 800nm to 1050nm to avoid this conflict would be required.</p>
+</div>
+
+</body>
+</html>
