@@ -5,24 +5,52 @@
 
   <link rel="stylesheet" type="text/css" href="main.css">
 
-</head>
-<body>
-  
-<div class="topnav">
-  <a href="home.html">Home</a>
-  <a class="active" href="modules.html">Modules</a>
-  <a href="build-tips.html">Build Tips</a>
-  <a href="https://github.com/Joshedwards222/Test/">Git Hub</a>
-  <a href="https://blogs.ncl.ac.uk/holdenlab/">Holden Lab</a>
-  <div style="float:right"><p style="color:white">Updated: November 2020</p></div>
-</div>
+  <link rel="stylesheet" type="text/css" href="menu.css">
 
-<div class="hero-image">
-  <div class="hero-text">
-    <h1 style="font-size:50px">Modules</h1>
-    <p style="font-size:30px">Stand-Alone Modules that make up LifeHack</p>
+</head>
+<body onload="closeNav()">
+
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="grid-container">
+      <div class="grid-empty"></div>
+      <a href="home.html"><div class="hero-image-home">
+        <div class="hero-text"><h1 style="font-size:50pt">Home</h1></div>
+      </div></a>
+      <div class="grid-empty"></div>  
+      <a href="modules.html"><div class="hero-image-modules">
+        <div class="hero-text"><h1 style="font-size:50pt">Modules</h1></div>
+      </div></a>
+      <a href="build-tips.html"><div class="hero-image-buildtips">
+        <div class="hero-text"><h1 style="font-size:50pt">Build Tips</h1></div>
+      </div></a>
+      <a href="https://github.com/HoldenLab/LifeHack"><div class="hero-image-github">
+        <div class="hero-text"><h1 style="font-size:50pt">Git Hub</h1></div>
+      </div></a>
+      <div class="grid-empty"></div>
+     <a href="https://blogs.ncl.ac.uk/holdenlab/"><div class="hero-image-holdenlab">
+        <div class="hero-text"><h1 style="font-size:50pt">Holden Lab</h1></div>
+      </div></a>
+      <div class="grid-empty"></div>  
+    </div>
   </div>
-</div>
+  <script>
+  function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+  }
+  
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0px";
+  }
+  </script>
+  
+  <div class="hero-image">
+    <a class="button" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
+    <div class="hero-text">
+      <h1 style="font-size:50px">Modules</h1>
+    <p style="font-size:30px">Stand-Alone Modules that make up LifeHack</p>
+    </div>
+  </div>
 
 <div class="sidenav">
   <a href="#Structure">Structure</a>
@@ -32,8 +60,9 @@
   <a href="#FocusShifter">Focus Shifter</a>
   <a href="#IncubationBox">Incubation Box</a>
   <hr> 
-  <q>Project Contibutors: Josh Edwards, Seamus Holden</q>
-  <q>Website by Josh Edwards</q>
+  <p>Project Contibutors: Josh Edwards, Seamus Holden</p>
+  <p>Website by Josh Edwards</p>
+  <p>Updated: November 2020</p>
   <a href="LICENCE" style="font-size:10px">Licence: MIT Licence</a>
 </div>
 
@@ -51,17 +80,137 @@
     <li><b>Incubation Box:</b> A custom acryllic box enclosing the main body. Includes large hatches for easy sample and hardware manipulation.</li>
     <li><b>Focus Shifter:</b> Normally encompassed by the main body but effective with any system. Extends the working range of reflection based autofocus systems using a translatable tube lens.</li>
   </ul>
+ 
   <h1 id="MainBody">Main Body</h1><hr>
-  <img src="Images/Microscope-body.jpg" width="40%">
-  <h1 id="ExcitationModule">Excitiation Module</h1><hr>
+  <p>The main body of the microscope contains all of the hardware to fulfill the functionality of a microscope bar fluorescence excitation.</p>
+
+  <video src="Video/Microscope-body-animation.mp4" width="90%" controls autoplay></video>
+
+  <ul>
+    <li>X/Y galvo-scanning mirrors for ring TIRF/HILO</li>
+    <li>X/Y stepper and Z piezo stage</li>
+    <li>high speed, flourescence Camera</li>
+    <li>Infra-red pathway with brightfield (LED illumination + camera) and reflection based autofocus</li>
+  </ul>
+
+  <img src="Images/Microscope-body.jpg" width="60%">
+
+  <p><b>TIRF and HILO</b> illumination is provided by the pair of Galvo-scanning mirrors incorporated into the excitation path after the back port of the main body. This enables the use of ring TIRF\cite{RingTIRF} whereby through the course of an image the beam illuminates the coverslip from all angles reducing shadowing or artifacts caused by imperfections in the coverslip or inhomogeneities in the sample.</p>
+
+  <p>A cylindrical lens positioned in a 3D printed box immediately before the camera provides <b>3D localisation by atigmatism</b>. This contains a rail mounting system to allow for axial adjustment of the lens position. Sliding the lens towards and away from the camera will respectively reduce and increase the severity of the astigmatism at the camera.</p>
+
+  <p>This module is also home to <b>refelction based autofocus</b> (ASI CRISP) and an infra-red camera and LED to enable brightfield imaging concurrently with fluorescence imaging. This means that <b>image or bead based drift correction</b> can be implemented without affecting data collection.</p>
+
+  <p>Unfortunately, the CRISP system and camera share the same spectral window and so would interfere with eachother if used simultaneously. Therefore, to provide drift correction across all three dimensions, a camera based system capable of this individually or a shift of operation from 800nm to 1050nm to avoid this conflict would be required.</p>
+  
+   <img src="Images/Line_MainBody.jpg" width="60%">
+ 
+   <h1 id="ExcitationModule">Excitiation Module</h1><hr>
   <img src="Images/Excitation-Module.jpg" width="60%">
+  
+  <p>Finally, the system is capable, in its base form, of <b>2 channel super-resolution imaging</b>. This is achieved by its <b>4 lasers (405nm, 488nm, 561nm, 642nm)</b> in the excitation module. This gives two activation and two excitation wavelengths allowing for 2 photoactivatable fluorophores to be imaged concurrently or, of course, 4 standard fluorophores if you can find an experiment that will work for that.</p>
+  
+  <p>The two longer wavelength lasers are <b>fibre lasers</b> which require approximately 30 minutes from turning on to reach maximum stability and hence are not suited to be switchedon and off during an experiment. This causes a problem for SMLM imaging where the microscope will need to repeatedly alternate between activation and excitation lasers. To circumvent this issue these two lasers are passed through an <b>AOTF (Acousto-OpticalTunable Filter)</b> which allows for microsecond selection of any combination of these lasers including neither or both.</p>
+  
+  <p>The two shorter wavelength lasers are <b>diode lasers</b> and have a greater stability when switched on. Because of this, and to maintain simplicity, these two lasers are not passed through  the  AOTF. The shutter at the exit of the module has millisecond responses and provides control over the excitation as a whole to enable complex experiments like time-lapses to be taken.</p>
+  
+  <p>Each laser pathway contains a mirror pair to allow for simple alignment and are kept on axis wherever possible once again for simplicity</p>
+  
+  <img src="Images/Line_Excitation.jpg" width="60%">
+
   <h1 id="BeamExpansionModule">Beam Expansion Module</h1><hr>
   <img src="Images/Beam-Expansion-Module.jpg" width="60%">
+  
+  <p>The Beam Expansion module's fundamental role is to take the output beam from the <b>Excitation module</b> and both <b>raise and broaden</b> it for input into the Main Body. The beam diameter is controlled jointly by the choice of positive lens (200mm and 400mm) focal length and the iris. A longer focal length lens selection will result in a broader beam (larger imaging area) and hence a lower power density which can then be balanced using the iris.</p>
+
+  <img src="Images/Line_Expansion.jpg" width="60%">
+
   <h1 id="FocusShifter">Focus Shifter</h1><hr>
-  <img src="Images/Focus-Shifter.jpg" width="60%">
+
+  <p>To add in-sample offset shift to reflection autofocus systems (either home built or commercial systems such as the ASI CRISP) We developed an Arduino based controller for shifting the focus lock position of reflection based autofocus systems.</p>
+
+  <img src="Images/Focus-Shifter.jpg" width="60%"> 
+
+  <h2>Items required</h2>
+  <h3>Electronics:</h3>
+  <ul>
+    <li> ASI crisp or other reflection based autofocus system</li>
+    <li> Arduino Uno</li>
+    <li> Adafruit motor shield v2.3</li>
+    <li> 12V stepping motor, Unipolar Hybrid Stepper Motor 1.8°, 0.10Nm, 12 V dc, 400 mA, 6 Wires RS Stock No. 191-8299</li>
+    <li> PCB headers</li>
+    <li> 12V power supply: Plugtop PSU UK unregulated 3-12Vdc 6W RS Stock no.: 6158880</li>
+    <li> Pulley: MXL Plastic Pulley with insert teeth 18 RS Stock no.: 7784714</li>
+    <li> 2x MXL Rubber Timing Belt W1/4, L 12.00 in.  RS Stock no.: 7785089</li>
+    <li> Wires</li>
+    <li> dpdt switch</li>
+	<li> Non latching button</li>
+    <li> Spade crimp connectors</li>
+  </ul>
+  <h3>Optics & Optomechanics</h3>
+  <ul>
+    <li> 1” F=100mm biconvex lens (NIR coated)</li>
+    <li> SM1 Zoom Housing for Ø1" Optics, Non-Rotating, 2" (50.8 mm) Travel SM1NR1</li>
+    <li> Zoom housing ? cage adaptors:</li>
+    <li> 2x LCP02/M</li>
+    <li> SM1T10 SM1 (1.035"-40) Coupler, External Threads, 1" Long</li>
+    <li> Motor to ½” post adaptor: CP06F/M</li>
+    <li> 20 cm of cage rods</li>
+    <li> CRISP mounted on cage plate adaptor</li>
+    <li> LCP01/M</li>
+    <li> SM2A6</li>
+    <li> C Mount to SM1 thread adaptor.</li>
+  </ul>
+
+  <h2>Background</h2>
+  <p>We use a reflection based ASI CRISP to maintain focus on our microscope. Similar to many other systems, it reflects an IR beam off a coverslip, and uses shifts in the position of this beam to maintain constant objective-slide separation by closed loop control. 
+  The limitation of this approach is that this approach only allows you to lock focus at/ very near to the coverslip, in a range &lt; 1 um for a 100x high NA objective, or optionally, to offset the lock position a fixed amount by physically displacing the autofocus device. We wanted to image cells at different heights within the same sample, so this approach was not sufficient for us.</p>
+  
+  <p>As the Focus Shifter module on LifeHack has its own beam path and tube lens we were able to produce large changes in the lock position by implementing a motorized Arduino controlled tube lens on this path. This effectively offsets the lock position (the coverslide) and the camera/ excitation focus by a variable amount, in our case allowing ~ 10 um of lock range on 100x NA 1.49 TIRF objective, instead of the standard &lt; 1 um with a fixed autofocus tube lens.</p>
+  
+  <p>Although this implementation is built around an ASI CRISP, in principle it should work for any commercial or home built autofocus system.</p>
+
+  <h2>Basic instructions/ notes</h2>
+  <ul>
+    <li> The Thorlabs zoom lens housing is controlled with a stepper motor, connected via a pulley and timing belt. Bizarrely, I could not find an easy out of the box way of adding pulley teeth to a cylindrical object (the zoom housing). As our application was low torque, I took the very low tech approach of chopping up a second timing belt, and gluing it inside out onto the outside of the zoom housing. The glued timing belt then acts as a makeshift pulley.</li>
+    <li> Wire the motor to the Adafruit control board in 6-wire configuration.</li>
+	<li> Ensure to connect an external 12V power supply to the Arduino board to supply sufficient power to the motor.</li>
+	<li> Code is included to control the stepper motor and microscope focus via Arduino. Download the Arduino IDE, and open the Arduino focus-controller.ino sketch. Install the _Adafruit\_Motor\_Shield\_V2\_Library_ via the _Sketch\>Include Library\>Manage Libraries_ interface. Upload the code to the Arduino board.</li>
+	<li> Connect to the Arduino board and control the motor using the Arduino (or any other) serial monitor interface.</li>
+	<li> In addition to serial monitor control, there is also a dual throw switch to control the lens position</li>
+	<li> Axial magnification is proportional to the square of the lateral magnification. In order for a tube lens shift of several mm to cause sufficient focal shift, we need to use a shorter focal length tube lens for the autofocus, compared to the imaging tube lens. In our case, the (Nikon) imaging tube lens is f=200mm, and the autofocus is f=100mm, reducing the axial autofocus magnification by a factor of 4 – this gives us an ~10 um lock range.</li>
+  </ul>
+
+  <h2>Photos</h2>
+
+  <h3>Autofocus diagram:</h3>
+
+  <img src="Images/Focus-Shifter-Line.png" width="40%">
+  <img src="Images/FocusShifterAnimation.gif" width="40%">
+
+  <h3>Autofocus photos:</h3>
+
+  <img src="images/autofocus-view1.jpg" width="40%">
+  <img src="images/autofocus-view2.jpg" width="40%">
+  <img src="images/autofocus-view3.jpg" width="40%">
+
+  <h3>Wiring:</h3>
+
+  <img src="Images/Arduino.jpg" width="40%">
+  <img src="Images/ground.jpg" width="40%">
+  <img src="Images/Switch-Connected.jpg" width="40%">
+  <img src="Images/Button-Connected.jpg" width="40%">
+
   <h1 id="IncubationBox">Incubation Box</h1><hr>
   <img src="Images/Incubation-Box.jpg" width="40%">
-</div>
+
+  <p>The Incuabtion Box encloses the main body of the microscope and includes a <b>wide array of access hatches</b> for both sample manipulation and microscope alignment. This not only fulfils the requirement for keeping the sample at an optimal and consistent temperature but also provides almost complete <b>thermal stability</b> for the microscope body. The Incubator is made from black acrylic and can be produced by in-house workshops if properly equipped but is also readily outsourced using the <b>CAD designs</b>.</p>
   
+  <p>The Box has been designed with large hatches on both side panels for <b>maximum acessability</b>. These are held shut both by magnets and hinge tension to ensure that they do not open accidentally. A port is also positioned for the camera so that it is not unneccesarily heated by being enclosed by the box.</p>
+  
+  <p>On the back panel, as well as an excitation beam port are 4 ports for heater hoses. Our iteration of LifeHack uses a Cube2 heater from Life Imaging Services and is able to achieve <b>X&#176;C stability</b> over long periods</p>
+  
+</div>
+
 </body>
 </html>
