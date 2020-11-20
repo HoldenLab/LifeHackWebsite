@@ -123,15 +123,15 @@
  
     <p> Wire the motor to the Adafruit control board in 6-wire configuration. Ensure to connect an external 12V power supply to the Arduino board to supply sufficient power to the motor.</p>
 
-    <p> Code is included to control the stepper motor and microscope focus via Arduino. Download the Arduino IDE, and open the Arduino focus-controller.ino sketch. Install the _Adafruit\_Motor\_Shield\_V2\_Library_ via the _Sketch\>Include Library\>Manage Libraries_ interface. Upload the code to the Arduino board.</p>
+    <p> Code is included to control the stepper motor and microscope focus via Arduino. Download the Arduino IDE, and open the Arduino focus-controller.ino sketch. Install the <b>_Adafruit\_Motor\_Shield\_V2\_Library_</b> via the <b>_Sketch\>Include Library\>Manage Libraries_</b> interface. Upload the code to the Arduino board.</p>
 
     <p> Connect to the Arduino board and control the motor using the Arduino (or any other) serial monitor interface.</p>
 
     <p> Axial magnification is proportional to the square of the lateral magnification. In order for a tube lens shift of several mm to cause sufficient focal shift, we need to use a shorter focal length tube lens for the autofocus, compared to the imaging tube lens. In our case, the (Nikon) imaging tube lens is f=200mm, and the autofocus is f=100mm, reducing the axial autofocus magnification by a factor of 4 – this gives us an ~10 um lock range.</p>
     
-    <h2>Control Box</h2>
+    <h3>Control Box</h3>
 
-    <p>In practice the serial monitor control is too clunky for any more than initial tests. For regular use there is also a dual throw switch to control the lens position and a home button to return a set "zero" point both contained in a 3d printed box</p>
+    <p>In practice the serial monitor control is too clunky for any more than initial tests. For regular use there is a dual throw switch to control the lens position and a home button to return to a set "zero" point. Both are contained in a 3d printed box.</p>
 
     <img src="Images/FocusShifterController.jpg" width="60%">
 
@@ -145,18 +145,8 @@
 
     <p>The buttons can then be inserted into the control box and connected using the crimp connectors</p>
 
-    <img src="Images/Switch-Connected.jpg" width="40%">
-    <img src="Images/Button-Connected.jpg" width="40%">
-
-    <h2>Photos</h2>
-  
-    <h3>Autofocus photos:</h3>
-  
-    <img src="images/autofocus-view1.jpg" width="40%">
-    <img src="images/autofocus-view2.jpg" width="40%">
-    <img src="images/autofocus-view3.jpg" width="40%">
-  
-    <h3>Wiring:</h3>
+    <img src="Images/Switch-Connected.jpg" width="40%" style="margin-bottom:1px">
+    <img src="Images/Button-Connected.jpg" width="40%" style="margin-top:1px">
 
 </div>
 
