@@ -2,43 +2,11 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" type="text/css" href="main.css">
+
   <link rel="stylesheet" type="text/css" href="menu.css">
-<style>
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    overflow-x: hidden;
-    padding: 6px 20px 6px 20px;
-    margin:auto;
-  }
-  
-  td, th {
-    width: 50%;
-    text-align: right;
-    padding: 6px 20px 6px 20px;
-  }
-  
-  tr:nth-child(odd) {
-    background-color: #ddd;
-    color:black
-  }
-  
-  tr:nth-child(1){
-    background: #333;
-    color: #f2f2f2;
-  }
-  
-  th:nth-child(2){
-    text-align: left;
-    border-left: 1px solid #333;
-  }
-  
-  td:nth-child(2){
-    text-align: left;
-    border-left: 1px solid #333;
-  }
-</style>
+
 </head>
 <body onload="closeNav()">
 
@@ -66,35 +34,35 @@
       <a href="https://github.com/HoldenLab/LifeHack"><div class="hero-image-github">
         <div class="hero-text"><h1 style="font-size:40pt">Git Hub</h1></div>
       </div></a>
-     <a href="https://blogs.ncl.ac.uk/holdenlab/"><div class="hero-image-holdenlab">
+      <a href="https://blogs.ncl.ac.uk/holdenlab/"><div class="hero-image-holdenlab">
         <div class="hero-text"><h1 style="font-size:40pt">Holden Lab</h1></div>
       </div></a>
       <a href="Operation.html"><div class="hero-image-Operation">
         <div class="hero-text"><h1 style="font-size:40pt">Operation</h1></div>
-      </div></a> 
+      </div></a>
     </div>
   </div>
-<script>
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
-}
-
-function closeNav() {
-  document.getElementById("myNav").style.height = "0px";
-}
-</script>
-
-<div class="hero-image">
-  <a class="button" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
-  <div class="hero-text">
-    <h1 style="font-size:50px">Beam Expansion Module</h1>
-    <p style="font-size:30px">Raises and Expands the Beam</p>
+  <script>
+  function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+  }
+  
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0px";
+  }
+  </script>
+  
+  <div class="hero-image">
+    <a class="button" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
+    <div class="hero-text">
+      <h1 style="font-size:50px">Focus Shifter</h1>
+    <p style="font-size:30px">Range Extender for Reflection Based Autofocus</p>
+    </div>
   </div>
-</div>
 
 <div class="sidenav">
   <a href="#Description">Description</a>
-  <a href="#Constuction">Construction</a>
+  <a href="#Construction">Construction</a>
   <hr> 
   <p>Project Contibutors: Josh Edwards, Seamus Holden</p>
   <p>Website by Josh Edwards</p>
@@ -104,12 +72,13 @@ function closeNav() {
 
 <div class="page">
 
-  <video src="Video/beam-expansion-animation.mp4" width="90%" controls autoplay muted></video>
+  <h2>Connections</h2>
+  <iframe src="Images/Circuit-Diagram.pdf" width="100%" height="300px" title="Connections Diagram"></iframe>
+  <p>Circuit diagram style drawing of control connections as layed out on our iteration of LifeHack.</p>
 
-  <h1 id="Description">Description</h1><hr>
-
-  <p>The Beam Expansion module's fundamental role is to take the output beam from the <b>Excitation module</b> and both <b>raise and broaden</b> it for input into the Main Body. The beam diameter is controlled jointly by the choice of positive lens (200mm and 400mm) focal length and the iris. A longer focal length lens selection will result in a broader beam (larger imaging area) and hence a lower power density which can then be balanced using the iris.</p>
-
+  <h2>TriggerScope</h2>
+  <img src="Images/TriggerScope.jpg" width="60%">
+  <img src="Images/TriggerScope-diagram.jpg" width="60%">
 
 
 </div>
