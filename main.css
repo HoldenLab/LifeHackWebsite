@@ -56,6 +56,26 @@ body, html {
     color: black;
   }
 
+  .button-design {
+    border: none;
+    outline: 0;
+    display: block;
+    padding: 1% 2%;
+    left: auto;
+    color: white;
+    background-color: #333;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15pt;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .button-design:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
   .topnav {
     padding-left: 0.5cm;
     padding-right: 0.25cm;
