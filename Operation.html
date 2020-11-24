@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <link rel="stylesheet" type="text/css" href="menu.css">
+
+</head>
+<body onload="closeNav()">
+
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="grid-container">
+      <a href="home.html"><div class="hero-image-home">
+        <div class="hero-text"><h1 style="font-size:40pt">Home</h1></div>
+      </div></a>
+      <a href="MainBody.html"><div class="hero-image-MainBody">
+        <div class="hero-text"><h1 style="font-size:40pt">Main Body</h1></div>
+      </div></a>
+      <a href="BeamExpansion.html"><div class="hero-image-BeamExpansion">
+        <div class="hero-text"><h1 style="font-size:40pt">Beam Expansion Module</h1></div>
+      </div></a>
+      <a href="Excitation.html"><div class="hero-image-Excitation">
+        <div class="hero-text"><h1 style="font-size:40pt">Excitation Module</h1></div>
+      </div></a>
+      <a href="FocusShifter.html"><div class="hero-image-FocusShifter">
+        <div class="hero-text"><h1 style="font-size:40pt">Focus Shifter</h1></div>
+      </div></a>
+      <a href="IncubationBox.html"><div class="hero-image-IncubationBox">
+        <div class="hero-text"><h1 style="font-size:40pt">Incubation Box</h1></div>
+      </div></a>
+      <a href="https://github.com/HoldenLab/LifeHack"><div class="hero-image-github">
+        <div class="hero-text"><h1 style="font-size:40pt">Git Hub</h1></div>
+      </div></a>
+      <a href="https://blogs.ncl.ac.uk/holdenlab/"><div class="hero-image-holdenlab">
+        <div class="hero-text"><h1 style="font-size:40pt">Holden Lab</h1></div>
+      </div></a>
+      <a href="Operation.html"><div class="hero-image-Operation">
+        <div class="hero-text"><h1 style="font-size:40pt">Operation</h1></div>
+      </div></a>
+    </div>
+  </div>
+  <script>
+  function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+  }
+  
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0px";
+  }
+  </script>
+  
+  <div class="hero-image">
+    <a class="button" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
+    <div class="hero-text">
+      <h1 style="font-size:50px">Operation</h1>
+    <p style="font-size:30px">Harware and Software to Control the System</p>
+    </div>
+  </div>
+
+<div class="sidenav">
+  <a href="#Hardware">Hardware</a>
+  <a href="#Software">Software</a>
+  <hr> 
+  <p>Project Contibutors: Josh Edwards, Seamus Holden</p>
+  <p>Website by Josh Edwards</p>
+  <p>Updated: November 2020</p>
+  <a href="LICENCE" style="font-size:10px">Licence: MIT Licence</a>
+</div>
+
+<div class="page">
+
+  <h1 id="Hardware">Hardware</h1><hr>
+
+  <h2>Parts</h2>
+  <iframe width="100%" height="500px" frameborder="0" scrolling="no" src="https://newcastle-my.sharepoint.com/personal/b9049474_newcastle_ac_uk/_layouts/15/Doc.aspx?sourcedoc={b81bfecf-4c47-48d0-b1d7-a8471523f87b}&action=embedview&wdAllowInteractivity=False&Item='Other%20Hardware'!A1%3AG53&wdDownloadButton=True&wdInConfigurator=True"></iframe>
+
+  <h2>Connections</h2>
+
+  <p>A circuit diagram style drawing of control connections as layed out on our iteration of LifeHack.</p>
+  <iframe src="Images/Circuit-Diagram.pdf" width="100%" height="500px" title="Connections Diagram"></iframe>
+
+  <h2>TriggerScope</h2>
+  
+  <img src="Images/TriggerScope.jpg" width="60%">
+  <img src="Images/TriggerScope-diagram.jpg" width="60%">
+
+  <ul>
+    <li><b>DAC1:</b> 405nm laser power control</li>
+    <li><b>DAC2:</b> 488nm laser power control</li>
+    <li><b>DAC3:</b> AOTF (560nm channel)</li>
+    <li><b>DAC4:</b> AOTF (642nm channel)</li>
+    <li><b>DAC5:</b> AOTF (Blanking)</li>
+    <li><b>TTL-Out1:</b> 405nm laser triggering</li>
+    <li><b>TTL-Out2:</b> 488nm laser triggering</li>
+    <li><b>TTL-Out3:</b> Shutter triggering</li>
+    <li><b>TTL-Out4:</b> Camera triggering</li>
+    <li><b>TTL-In1:</b> Camera triggering</li>
+  </ul>
+
+  <p>The AOTF signal generator takes input from the TriggerScope via a 25 pin connector. Therefore a custom connector is required to convert from SMA. This just requires a blank 25 pin connector and 3 SMA-Blank wires to solder into the required pins. Care must be taken to reinforce the finished assembly as otherwise it is extremely fragile.</p>
+  <img src="Images/25PinConnector.jpg" width="60%">
+
+  <h2>National Instruments DAC</h2>
+
+  <p><b>Add images of board wiring and connection diagram from lid</b></p>
+
+  <h1 id="Software">Software</h1><hr>
+  <h2>Micromanager</h2>
+
+</div>
+
+</body>
+</html>

@@ -88,9 +88,9 @@ body, html {
     background-size: cover;
     position: relative;
   }
-  
-  .hero-image-modules {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Focus-Shifter.JPG");
+
+  .hero-image-MainBody {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Microscope-body.jpg");
     height: 100%;
     min-height: 4.5cm;
     background-position: center;
@@ -101,8 +101,96 @@ body, html {
     color:white;
   }
   
-  .hero-image-modules:hover {
+  .hero-image-MainBody:hover {
+    background-image: url("Images/Microscope-body.jpg");
+    height: 100%;
+    min-height: 4.5cm;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .hero-image-BeamExpansion {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Beam-Expansion-Module.jpg");
+    height: 100%;
+    min-height: 4.5cm;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color:white;
+  }
+  
+  .hero-image-BeamExpansion:hover {
+    background-image: url("Images/Beam-Expansion-Module.jpg");
+    height: 100%;
+    min-height: 4.5cm;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .hero-image-Excitation {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Excitation-Module.jpg");
+    height: 100%;
+    min-height: 4.5cm;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color:white;
+  }
+  
+  .hero-image-Excitation:hover {
+    background-image: url("Images/Excitation-Module.jpg");
+    height: 100%;
+    min-height: 4.5cm;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .hero-image-FocusShifter {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Focus-Shifter.JPG");
+    height: 100%;
+    min-height: 4.5cm;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color:white;
+  }
+
+  .hero-image-FocusShifter:hover {
     background-image: url("Images/Focus-Shifter.JPG");
+    height: 100%;
+    min-height: 4.5cm;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .hero-image-IncubationBox {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Incubation-Box.jpg");
+    height: 100%;
+    min-height: 4.5cm;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color:white;
+  }
+  
+  .hero-image-IncubationBox:hover {
+    background-image: url("Images/Incubation-Box.jpg");
     height: 100%;
     min-height: 4.5cm;
     background-position: center;
@@ -133,30 +221,7 @@ body, html {
     position: relative;
     color:black;
   }
-  
-  .hero-image-buildtips {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Circuit-Diagram.JPG");
-    height: 100%;
-    min-height: 4.5cm;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color:white;
-  }
-  
-  .hero-image-buildtips:hover {
-    background-image: url("Images/Circuit-diagram.JPG");
-    height: 100%;
-    min-height: 4.5cm;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    color:black;
-  }
-  
+
   .hero-image-github {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Git-Hub.JPG");
     height: 100%;
@@ -180,6 +245,29 @@ body, html {
     color:black;
   }
   
+  .hero-image-Operation {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Circuit-Diagram.jpg");
+    height: 100%;
+    min-height: 4.5cm;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color:white;
+  }
+  
+  .hero-image-Operation:hover {
+    background-image: url("Images/Circuit-Diagram.jpg");
+    height: 100%;
+    min-height: 4.5cm;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color:black;
+  }
+
   .hero-text {
     text-align: center;
     position: absolute;

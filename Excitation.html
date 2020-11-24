@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="menu.css">
+</head>
+
+<body onload="closeNav()">
+
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="grid-container">
+      <a href="home.html"><div class="hero-image-home">
+        <div class="hero-text"><h1 style="font-size:40pt">Home</h1></div>
+      </div></a>
+      <a href="MainBody.html"><div class="hero-image-MainBody">
+        <div class="hero-text"><h1 style="font-size:40pt">Main Body</h1></div>
+      </div></a>
+      <a href="BeamExpansion.html"><div class="hero-image-BeamExpansion">
+        <div class="hero-text"><h1 style="font-size:40pt">Beam Expansion Module</h1></div>
+      </div></a>
+      <a href="Excitation.html"><div class="hero-image-Excitation">
+        <div class="hero-text"><h1 style="font-size:40pt">Excitation Module</h1></div>
+      </div></a>
+      <a href="FocusShifter.html"><div class="hero-image-FocusShifter">
+        <div class="hero-text"><h1 style="font-size:40pt">Focus Shifter</h1></div>
+      </div></a>
+      <a href="IncubationBox.html"><div class="hero-image-IncubationBox">
+        <div class="hero-text"><h1 style="font-size:40pt">Incubation Box</h1></div>
+      </div></a>
+      <a href="https://github.com/HoldenLab/LifeHack"><div class="hero-image-github">
+        <div class="hero-text"><h1 style="font-size:40pt">Git Hub</h1></div>
+      </div></a>
+     <a href="https://blogs.ncl.ac.uk/holdenlab/"><div class="hero-image-holdenlab">
+        <div class="hero-text"><h1 style="font-size:40pt">Holden Lab</h1></div>
+      </div></a>
+      <a href="Operation.html"><div class="hero-image-Operation">
+        <div class="hero-text"><h1 style="font-size:40pt">Operation</h1></div>
+      </div></a>  
+    </div>
+  </div>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0px";
+}
+</script>
+
+<div class="hero-image">
+  <a class="button" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
+  <div class="hero-text">
+    <h1 style="font-size:50px">Excitation Module</h1>
+    <p style="font-size:30px">Laser System for Fluorescence Exctiation</p>
+  </div>
+</div>
+
+<div class="sidenav">
+  <a href="#Description">Description</a>
+  <a href="#Construction">Construction</a>
+  <a href="#Parts">Parts</a>
+  <hr> 
+  <p>Project Contibutors: Josh Edwards, Seamus Holden</p>
+  <p>Website by Josh Edwards</p>
+  <p>Updated: November 2020</p>
+  <a href="LICENCE" style="font-size:10px">Licence: MIT Licence</a>
+</div>
+
+<div class="page">
+
+    <video src="Video/excitation-animation.mp4" width="90%" controls autoplay muted></video>
+  
+    <h1 id="Description">Description</h1><hr>
+
+    <img src="Images/Excitation-Module.jpg" width="60%">
+
+    <p>The Excitation module, in its base form, gives capability for <b>2 channel super-resolution imaging</b>. This is achieved by its <b>4 lasers (405nm, 488nm, 561nm, 642nm)</b>. This gives two activation and two excitation wavelengths allowing for 2 photoactivatable fluorophores to be imaged concurrently or, of course, 4 standard fluorophores if you can find an experiment that will work for that.</p>
+    
+    <p>The two longer wavelength lasers are <b>fibre lasers</b> which require approximately 30 minutes from turning on to reach maximum stability and hence are not suited to be switchedon and off during an experiment. This causes a problem for SMLM imaging where the microscope will need to repeatedly alternate between activation and excitation lasers. To circumvent this issue these two lasers are passed through an <b>AOTF (Acousto-OpticalTunable Filter)</b> which allows for microsecond selection of any combination of these lasers including neither or both.</p>
+    
+    <p>The two shorter wavelength lasers are <b>diode lasers</b> and have a greater stability when switched on. Because of this, and to maintain simplicity, these two lasers are not passed through  the  AOTF. The shutter at the exit of the module has millisecond responses and provides control over the excitation as a whole to enable complex experiments like time-lapses to be taken.</p>
+    
+    <p>Each laser pathway contains a mirror pair to allow for simple alignment and are kept on axis wherever possible once again for simplicity.</p>
+    
+    <img src="Images/Line_Excitation.jpg" width="60%">
+
+    <h1 id="Construction">Construction</h1><hr>
+    <a class="button-design" href="https://a360.co/2UWfw2J">&#x1f441; View Design</a>
+
+    <p>I found using M6 to M4 adapter screws very useful to mark positions on the breadboard before starting construction and as centering pins for components.</p>
+
+    <p>The module can be built by following the 3D designs. Alignment can be conducted using the standard 2 pinhole technique and each laser path includes an adjustable mirror pair to facilitate this.</p>
+
+    <h1 id="Parts">Parts</h1><hr>
+    <iframe src="LifeHack-Parts.htm" width="100%" height="500px" title="Parts"></iframe>
+    <p>Available for download <a href="Parts/Parts-List.xlsx">here</a></p>
+
+    <iframe width="100%" height="500px" frameborder="0" scrolling="no" src="https://newcastle-my.sharepoint.com/personal/b9049474_newcastle_ac_uk/_layouts/15/Doc.aspx?sourcedoc={b81bfecf-4c47-48d0-b1d7-a8471523f87b}&action=embedview&wdAllowInteractivity=False&Item='Excitation%20Module'!A1%3AG91&wdDownloadButton=True&wdInConfigurator=True"></iframe>
+
+    <h2>Custom Parts</h2>
+
+    <ul>
+        <li><a href="Parts/AOTF Mount.stl">AOTF mount</a></li>
+        <li><a href="Parts/Fiber Laser mounting base - 3D Print.stl">Fiber laser mount</a></li>
+        <li><a href="Parts/Diode Laser Mounting Body - 3D Print.stl">Diode laser mount (3D Print)</a></li>
+    </ul>
+
+</div>
+
+</body>
+</html>

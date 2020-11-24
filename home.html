@@ -42,30 +42,38 @@
 </head>
 <body onload="closeNav()">
 
-<div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="grid-container">
-    <div class="grid-empty"></div>
-    <a href="home.html"><div class="hero-image-home">
-      <div class="hero-text"><h1 style="font-size:50pt">Home</h1></div>
-    </div></a>
-    <div class="grid-empty"></div>  
-    <a href="modules.html"><div class="hero-image-modules">
-      <div class="hero-text"><h1 style="font-size:50pt">Modules</h1></div>
-    </div></a>
-    <a href="build-tips.html"><div class="hero-image-buildtips">
-      <div class="hero-text"><h1 style="font-size:50pt">Build Tips</h1></div>
-    </div></a>
-    <a href="https://github.com/HoldenLab/LifeHack"><div class="hero-image-github">
-      <div class="hero-text"><h1 style="font-size:50pt">Git Hub</h1></div>
-    </div></a>
-    <div class="grid-empty"></div>
-   <a href="https://blogs.ncl.ac.uk/holdenlab/"><div class="hero-image-holdenlab">
-      <div class="hero-text"><h1 style="font-size:50pt">Holden Lab</h1></div>
-    </div></a>
-    <div class="grid-empty"></div>  
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="grid-container">
+      <a href="home.html"><div class="hero-image-home">
+        <div class="hero-text"><h1 style="font-size:40pt">Home</h1></div>
+      </div></a>
+      <a href="MainBody.html"><div class="hero-image-MainBody">
+        <div class="hero-text"><h1 style="font-size:40pt">Main Body</h1></div>
+      </div></a>
+      <a href="BeamExpansion.html"><div class="hero-image-BeamExpansion">
+        <div class="hero-text"><h1 style="font-size:40pt">Beam Expansion Module</h1></div>
+      </div></a>
+      <a href="Excitation.html"><div class="hero-image-Excitation">
+        <div class="hero-text"><h1 style="font-size:40pt">Excitation Module</h1></div>
+      </div></a>
+      <a href="FocusShifter.html"><div class="hero-image-FocusShifter">
+        <div class="hero-text"><h1 style="font-size:40pt">Focus Shifter</h1></div>
+      </div></a>
+      <a href="IncubationBox.html"><div class="hero-image-IncubationBox">
+        <div class="hero-text"><h1 style="font-size:40pt">Incubation Box</h1></div>
+      </div></a>
+      <a href="https://github.com/HoldenLab/LifeHack"><div class="hero-image-github">
+        <div class="hero-text"><h1 style="font-size:40pt">Git Hub</h1></div>
+      </div></a>
+     <a href="https://blogs.ncl.ac.uk/holdenlab/"><div class="hero-image-holdenlab">
+        <div class="hero-text"><h1 style="font-size:40pt">Holden Lab</h1></div>
+      </div></a>
+      <a href="Operation.html"><div class="hero-image-Operation">
+        <div class="hero-text"><h1 style="font-size:40pt">Operation</h1></div>
+      </div></a>
+    </div>
   </div>
-</div>
 <script>
 function openNav() {
   document.getElementById("myNav").style.height = "100%";
@@ -87,6 +95,7 @@ function closeNav() {
 <div class="sidenav">
   <a href="#WhatItsAllAbout">What It's All About</a>
   <a href="#Features">Features</a>
+  <a href="#Structure">Structure</a>
   <hr> 
   <p>Project Contibutors: Josh Edwards, Seamus Holden</p>
   <p>Website by Josh Edwards</p>
@@ -95,8 +104,12 @@ function closeNav() {
 </div>
   
 <div class="page">
+
+  <video src="Video/Microscope-Full-animation.mp4" width="90%" controls autoplay muted></video>
+
   <h1 id="WhatItsAllAbout">What It's All About</h1><hr>
   <p>To many labs the significant time and expertise required to design and build a microscope is prohibitive. But still, a hackable, home built microscope will hold benefits that cannot be overlooked. The LifeHack microscope is an open-source system designed to provide an easily modifiable, modular platform for live cell SMLM imaging. It has been contructed from comercially available and 3D printed parts to simplify the build process while retaining adaptability.</p>
+  
   <img src="Images/Microscope-Full.JPG" width="60%">
 
   <h1 id="Features">Features</h1><hr>
@@ -152,8 +165,21 @@ function closeNav() {
   
   <h2 id="MultiColour">Multi Colour Imaging</h2>
   <p>  Finally, the system is capable, in its base form, of 2 channel super-resolution imaging. This is achieved by its 4 lasers (405nm, 488nm, 561nm, 642nm) in the excitation module. This gives two activation and two excitation wavelengths allowing for 2 photoactivatable fluorophores to be imaged concurrently or, of course, 4 standard fluorophores if you can find an experiment that will work for that.</p>
-</div>
 
+  <h1 id="Structure">Structure</h1><hr>
+  <p>The LifeHack System is organised into 3 main modules:</p>
+  <ul>
+    <li><b>Excitation module:</b> Contains the the lasers and AOTF / Shutter for exposure control.</li>
+    <li><b>Beam Expansion module:</b> Raises the excitation beam to the correct height for the back port of the microscope and uses a negative/positive lens pair to expand the beam diameter.</li>
+    <li><b>Main Body:</b> Includes the necessary structure for the optical paths, sample stage and camera for imaging. This includes components to allow for ring TIRF and IR based autofocus systems. </li>
+  </ul>
+  <img src="Images/Module-Structure.jpg" width="90%">
+  <p>The microscope also includes two sub-modules that are associated with the <b>Main Body</b> of the system but can be encorporated separately into another system to add functionality:</p>
+  <ul>
+    <li><b>Incubation Box:</b> A custom acryllic box enclosing the main body. Includes large hatches for easy sample and hardware manipulation.</li>
+    <li><b>Focus Shifter:</b> Normally encompassed by the main body but effective with any system. Extends the working range of reflection based autofocus systems using a translatable tube lens.</li>
+  </ul>
+</div>
 
 </body>
 </html>

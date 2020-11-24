@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="menu.css">
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 6px 20px 6px 20px;
+    margin:auto;
+  }
+  
+  td, th {
+    width: 50%;
+    text-align: right;
+    padding: 6px 20px 6px 20px;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #ddd;
+    color:black
+  }
+  
+  tr:nth-child(1){
+    background: #333;
+    color: #f2f2f2;
+  }
+  
+  th:nth-child(2){
+    text-align: left;
+    border-left: 1px solid #333;
+  }
+  
+  td:nth-child(2){
+    text-align: left;
+    border-left: 1px solid #333;
+  }
+</style>
+</head>
+<body onload="closeNav()">
+
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="grid-container">
+      <a href="home.html"><div class="hero-image-home">
+        <div class="hero-text"><h1 style="font-size:40pt">Home</h1></div>
+      </div></a>
+      <a href="MainBody.html"><div class="hero-image-MainBody">
+        <div class="hero-text"><h1 style="font-size:40pt">Main Body</h1></div>
+      </div></a>
+      <a href="BeamExpansion.html"><div class="hero-image-BeamExpansion">
+        <div class="hero-text"><h1 style="font-size:40pt">Beam Expansion Module</h1></div>
+      </div></a>
+      <a href="Excitation.html"><div class="hero-image-Excitation">
+        <div class="hero-text"><h1 style="font-size:40pt">Excitation Module</h1></div>
+      </div></a>
+      <a href="FocusShifter.html"><div class="hero-image-FocusShifter">
+        <div class="hero-text"><h1 style="font-size:40pt">Focus Shifter</h1></div>
+      </div></a>
+      <a href="IncubationBox.html"><div class="hero-image-IncubationBox">
+        <div class="hero-text"><h1 style="font-size:40pt">Incubation Box</h1></div>
+      </div></a>
+      <a href="https://github.com/HoldenLab/LifeHack"><div class="hero-image-github">
+        <div class="hero-text"><h1 style="font-size:40pt">Git Hub</h1></div>
+      </div></a>
+     <a href="https://blogs.ncl.ac.uk/holdenlab/"><div class="hero-image-holdenlab">
+        <div class="hero-text"><h1 style="font-size:40pt">Holden Lab</h1></div>
+      </div></a>
+      <a href="Operation.html"><div class="hero-image-Operation">
+        <div class="hero-text"><h1 style="font-size:40pt">Operation</h1></div>
+      </div></a> 
+    </div>
+  </div>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0px";
+}
+</script>
+
+<div class="hero-image">
+  <a class="button" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
+  <div class="hero-text">
+    <h1 style="font-size:50px">Beam Expansion Module</h1>
+    <p style="font-size:30px">Raises and Expands the Beam</p>
+  </div>
+</div>
+
+<div class="sidenav">
+  <a href="#Description">Description</a>
+  <a href="#Constuction">Construction</a>
+  <a href="#Parts">Parts</a>
+  <hr> 
+  <p>Project Contibutors: Josh Edwards, Seamus Holden</p>
+  <p>Website by Josh Edwards</p>
+  <p>Updated: November 2020</p>
+  <a href="LICENCE" style="font-size:10px">Licence: MIT Licence</a>
+</div>
+
+<div class="page">
+
+  <video src="Video/beam-expansion-animation.mp4" width="90%" controls autoplay muted></video>
+
+  <h1 id="Description">Description</h1><hr>
+
+  <p>The Beam Expansion module's fundamental role is to take the output beam from the <b>Excitation module</b> and both <b>raise and broaden</b> it for input into the Main Body.</p>
+
+  <p>Beam height is controlled by the periscope at the start of the module. We have used a Newport rail based periscope for easier alignment than post based designs.</p>
+    
+  <p>The beam diameter is increased by the -30mm lens and a choice of positive lenses (200mm and 400mm). A longer focal length lens selection will result in a broader beam (larger imaging area) and hence a lower power density which can then be finely adjusted using the iris.</p>
+
+  <p>The final turning mirror simply directs the beam into the input port of the <b>Main Body</b>.</p>
+
+  <h1 id="Construction">Construction</h1><hr>
+
+  <p>This module is best aligned using the output from the excitation module and as such should be built following that module. Alignment can be conducted using the standard 2 pinhole technique.</p>
+
+  <h1 id="Parts">Parts</h1><hr>
+  <iframe src="LifeHack-Parts.htm" width="100%" height="500px" title="Parts"></iframe>
+  <p>Available for download <a href="Parts/Parts-List.xlsx">here</a></p>
+
+  <iframe width="100%" height="500px" frameborder="0" scrolling="no" src="https://newcastle-my.sharepoint.com/personal/b9049474_newcastle_ac_uk/_layouts/15/Doc.aspx?sourcedoc={b81bfecf-4c47-48d0-b1d7-a8471523f87b}&action=embedview&wdAllowInteractivity=False&Item='Beam%20Expansion%20Module'!A1%3AG91&wdDownloadButton=True&wdInConfigurator=True"></iframe></div>
+
+</body>
+</html>

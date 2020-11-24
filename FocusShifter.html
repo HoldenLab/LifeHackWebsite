@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <link rel="stylesheet" type="text/css" href="menu.css">
+
+</head>
+<body onload="closeNav()">
+
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="grid-container">
+      <a href="home.html"><div class="hero-image-home">
+        <div class="hero-text"><h1 style="font-size:40pt">Home</h1></div>
+      </div></a>
+      <a href="MainBody.html"><div class="hero-image-MainBody">
+        <div class="hero-text"><h1 style="font-size:40pt">Main Body</h1></div>
+      </div></a>
+      <a href="BeamExpansion.html"><div class="hero-image-BeamExpansion">
+        <div class="hero-text"><h1 style="font-size:40pt">Beam Expansion Module</h1></div>
+      </div></a>
+      <a href="Excitation.html"><div class="hero-image-Excitation">
+        <div class="hero-text"><h1 style="font-size:40pt">Excitation Module</h1></div>
+      </div></a>
+      <a href="FocusShifter.html"><div class="hero-image-FocusShifter">
+        <div class="hero-text"><h1 style="font-size:40pt">Focus Shifter</h1></div>
+      </div></a>
+      <a href="IncubationBox.html"><div class="hero-image-IncubationBox">
+        <div class="hero-text"><h1 style="font-size:40pt">Incubation Box</h1></div>
+      </div></a>
+      <a href="https://github.com/HoldenLab/LifeHack"><div class="hero-image-github">
+        <div class="hero-text"><h1 style="font-size:40pt">Git Hub</h1></div>
+      </div></a>
+     <a href="https://blogs.ncl.ac.uk/holdenlab/"><div class="hero-image-holdenlab">
+        <div class="hero-text"><h1 style="font-size:40pt">Holden Lab</h1></div>
+      </div></a>
+      <a href="Operation.html"><div class="hero-image-Operation">
+        <div class="hero-text"><h1 style="font-size:40pt">Operation</h1></div>
+      </div></a>
+    </div>
+  </div>
+  <script>
+  function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+  }
+  
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0px";
+  }
+  </script>
+  
+  <div class="hero-image">
+    <a class="button" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
+    <div class="hero-text">
+      <h1 style="font-size:50px">Focus Shifter</h1>
+    <p style="font-size:30px">Range Extender for Reflection Based Autofocus</p>
+    </div>
+  </div>
+
+<div class="sidenav">
+  <a href="#Description">Description</a>
+  <a href="#Construction">Construction</a>
+  <a href="#Parts">Parts</a>
+  <hr> 
+  <p>Project Contibutors: Josh Edwards, Seamus Holden</p>
+  <p>Website by Josh Edwards</p>
+  <p>Updated: November 2020</p>
+  <a href="LICENCE" style="font-size:10px">Licence: MIT Licence</a>
+</div>
+
+<div class="page">
+  
+    <video src="Video/focus-shifter-animation.mp4" width="90%" controls autoplay muted></video>
+  
+    <h1 id="Description">Description</h1><hr>
+    <p>To add in-sample offset shift to reflection autofocus systems (either home built or commercial systems such as the ASI CRISP) We developed an Arduino based controller for shifting the focus lock position of reflection based autofocus systems.</p>
+ 
+    <img src="Images/Focus-Shifter.jpg" width="60%">
+
+    <p>We use a reflection based ASI CRISP to maintain focus on our microscope. Similar to many other systems, it reflects an IR beam off a coverslip, and uses shifts in the position of this beam to maintain constant objective-slide separation by closed loop control. 
+    The limitation of this approach is that this approach only allows you to lock focus at/ very near to the coverslip, in a range &lt; 1 um for a 100x high NA objective, or optionally, to offset the lock position a fixed amount by physically displacing the autofocus device. We wanted to image cells at different heights within the same sample, so this approach was not sufficient for us.</p>
+    
+    <p>As the Focus Shifter module on LifeHack has its own beam path and tube lens we were able to produce large changes in the lock position by implementing a motorized Arduino controlled tube lens on this path. This effectively offsets the lock position (the coverslide) and the camera/ excitation focus by a variable amount, in our case allowing ~ 10 um of lock range on 100x NA 1.49 TIRF objective, instead of the standard &lt; 1 um with a fixed autofocus tube lens.</p>
+    
+    <p>Although this implementation is built around an ASI CRISP, in principle it should work for any commercial or home built autofocus system.</p>
+
+    <img src="Images/Focus-Shifter-Line.png" width="40%">
+  
+
+    <h1 id="Construction">Construction</h1><hr>
+    <h2>Electronics:</h2>
+    <ul>
+      <li> ASI crisp or other reflection based autofocus system</li>
+      <li> Arduino Uno</li>
+      <li> Adafruit motor shield v2.3</li>
+      <li> 12V stepping motor, Unipolar Hybrid Stepper Motor 1.8°, 0.10Nm, 12 V dc, 400 mA, 6 Wires RS Stock No. 191-8299</li>
+      <li> PCB headers</li>
+      <li> 12V power supply: Plugtop PSU UK unregulated 3-12Vdc 6W RS Stock no.: 6158880</li>
+      <li> Pulley: MXL Plastic Pulley with insert teeth 18 RS Stock no.: 7784714</li>
+      <li> 2x MXL Rubber Timing Belt W1/4, L 12.00 in.  RS Stock no.: 7785089</li>
+      <li> Wires</li>
+      <li> dpdt switch</li>
+      <li> Non latching button</li>
+      <li> Spade crimp connectors</li>
+    </ul>
+    <h2>Optics & Optomechanics</h2>
+    <ul>
+      <li> 1” F=100mm biconvex lens (NIR coated)</li>
+      <li> SM1 Zoom Housing for Ø1" Optics, Non-Rotating, 2" (50.8 mm) Travel SM1NR1</li>
+      <li> Zoom housing ? cage adaptors:</li>
+      <li> 2x LCP02/M</li>
+      <li> SM1T10 SM1 (1.035"-40) Coupler, External Threads, 1" Long</li>
+      <li> Motor to ½” post adaptor: CP06F/M</li>
+      <li> 20 cm of cage rods</li>
+      <li> CRISP mounted on cage plate adaptor</li>
+      <li> LCP01/M</li>
+      <li> SM2A6</li>
+      <li> C Mount to SM1 thread adaptor.</li>
+    </ul>
+
+    <h2>Set Up</h2>
+    <p> The Thorlabs zoom lens housing is controlled with a stepper motor, connected via a pulley and timing belt. Bizarrely, I could not find an easy out of the box way of adding pulley teeth to a cylindrical object (the zoom housing). As our application was low torque, I took the very low tech approach of chopping up a second timing belt, and gluing it inside out onto the outside of the zoom housing. The glued timing belt then acts as a makeshift pulley.</p>
+ 
+    <p> Wire the motor to the Adafruit control board in 6-wire configuration. Ensure to connect an external 12V power supply to the Arduino board to supply sufficient power to the motor.</p>
+
+    <p> Code is included to control the stepper motor and microscope focus via Arduino. Download the Arduino IDE, and open the Arduino focus-controller.ino sketch. Install the <b>_Adafruit\_Motor\_Shield\_V2\_Library_</b> via the <b>_Sketch\>Include Library\>Manage Libraries_</b> interface. Upload the code to the Arduino board.</p>
+
+    <p> Connect to the Arduino board and control the motor using the Arduino (or any other) serial monitor interface.</p>
+
+    <p> Axial magnification is proportional to the square of the lateral magnification. In order for a tube lens shift of several mm to cause sufficient focal shift, we need to use a shorter focal length tube lens for the autofocus, compared to the imaging tube lens. In our case, the (Nikon) imaging tube lens is f=200mm, and the autofocus is f=100mm, reducing the axial autofocus magnification by a factor of 4 – this gives us an ~10 um lock range.</p>
+    
+    <h3>Control Box</h3>
+
+    <p>In practice the serial monitor control is too clunky for any more than initial tests. For regular use there is a dual throw switch to control the lens position and a home button to return to a set "zero" point. Both are contained in a 3d printed box.</p>
+
+    <img src="Images/FocusShifterController.jpg" width="60%">
+
+    <p>To produce this, simply solder suitable lengths of wire to the arduino ports (up=2, down=3, home=4) at one end and to spade crimp connectors at the other.</p>
+    
+    <img src="Images/Arduino.jpg" width="40%">
+
+    <p>Each connection requires a ground but the arduino only provides one. Creating a multi-ended connector as below solves this and contains the solder point within the control box.</p>
+
+    <img src="Images/ground.jpg" width="40%">
+
+    <p>The buttons can then be inserted into the control box and connected using the crimp connectors.</p>
+
+    <img src="Images/Switch-Connected.jpg" width="40%" style="margin-bottom:1px">
+    <img src="Images/Button-Connected.jpg" width="40%" style="margin-top:1px">
+
+    <h1 id="Parts">Parts</h1><hr>
+    <iframe src="LifeHack-Parts.htm" width="100%" height="500px" title="Parts"></iframe>
+    <p>Available for download <a href="Parts/Parts-List.xlsx">here</a></p>
+
+    <h2>Custom Components</h2>
+    <ul>
+        <li><a href="Parts/Motor-cage-coupler.stl">Motor mount</a></li>
+        <li><a href="Parts/Arduino-Box-Bottom.stl">Arduino box (bottom)</a></li>
+        <li><a href="Parts/Arduino-Box-Top.stl">Arduino box (top)</a></li>
+    </ul>
+
+</div>
+
+</body>
+</html>
