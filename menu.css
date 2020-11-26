@@ -200,7 +200,7 @@ body, html {
   }
   
   .hero-image-ImageAutofocus {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Holden-Lab.JPG");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Image-Autofocus.jpg");
     height: 100%;
     min-height: 4.5cm;
     background-position: center;
@@ -212,14 +212,13 @@ body, html {
   }
   
   .hero-image-ImageAutofocus:hover {
-    background-image: url("Images/Holden-Lab.JPG");
+    background-image: url("Images/Image-Autofocus.jpg");
     height: 100%;
     min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    color:black;
   }
 
   .hero-image-github {
