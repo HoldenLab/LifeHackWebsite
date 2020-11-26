@@ -100,7 +100,7 @@ function closeNav() {
   <p>Project Contibutors: Josh Edwards, Seamus Holden</p>
   <p>Website by Josh Edwards</p>
   <p>Updated: November 2020</p>
-  <a href="LICENCE" style="font-size:10px">Licence: MIT Licence</a>
+  <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="font-size:10px">license: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 </div>
   
 <div class="page">
@@ -139,25 +139,25 @@ function closeNav() {
       <td>4 Lasers + AOTF Switching</td>
     </tr>
     <tr>
-      <td>Active Sample Stabilisation</td>
-      <td>ASI CRISP + IR Brightfield based</td>
+      <td>Focus Lock</td>
+      <td>Extended reflection based + IR Brightfield based Autofocus</td>
     </tr>
     <tr>
-      <td>Future Proof / Adaptable</td>
+      <td>Adaptable</td>
       <td>Modular and Open Source Designs</td>
     </tr>
   </table>
 
   <h2 id="DesignPhilosophy">Design Philosophy</h2>
-  <p>To achieve the goal of creating a system that is adaptable and future proof we have designed the microscope around 3 modules. These modules may be modified individually or used in conjuntion with other systems. The system is almost exclusively made from either commercially available components or 3D printed parts. This has been done with the aim of maximising reproducability for other labs.</p>
+  <p>To achieve the goal of creating a system that is adaptable and future proof we have designed the microscope around 3 main modules and 3 sub-modules. These modules may be modified individually or used in conjuntion with other systems. The system is almost exclusively made from either commercially available components or 3D printed parts. This has been done with the aim of maximising reproducability for other labs.</p>
   <a href="https://www.autodesk.co.uk/products/fusion-360/overview"><img src="Images/Fusion360-logo.png" width="30%"></a>
-  <p>The designs for the microscope have been modelled using Autodesk's Fusion 360 software. These are available as .STEP files or native .f3d files from the Git hub repository. These designs allow for users to adapt the system to suit their need and function as easy to follow plans during the build process.</p>
+  <p>The designs for the microscope have been modelled using Autodesk's Fusion 360 software. These are available to view online and download from each module's page. These designs allow for users to adapt the system to suit their need and function as easy to follow plans during the build process.</p>
 
   <h2 id="LiveCell">Live Cell Capable</h2>
-  <p>An incubator design enclosing the main body of the microscope is included as part of the system with a wide array of access hatches for both sample manipulation and microscope alignment. This not only fulfils the requirement for keeping living samples at an optimal and consistent temperature but also provides almost complete thermal stability for the microscope body.</p>
+  <p>An incubator design enclosing the main body of the microscope is included as part of the system with a wide array of access hatches for both sample manipulation and microscope alignment. This not only fulfils the essential requirement of keeping living samples at an optimal and consistent temperature to grow but also provides almost complete thermal stability for the microscope body thereby drastically reducing drift during imaging.</p>
 
-  <h2 id="Drift">Drift Correction</h2>
-  <p>The Microscope is capable of providing drift correction using the ASI CRISP system approximately matching the system found on Nikon's offering. This is augmented by a translatable tube lens that extends the lock range to approximately 1mm. The LifeHack system additionally includes an infra-red camera and LED to enable brightfield imaging concurrently with fluorescence imaging. This means that image or bead based drift correction can be implemented without affecting data collection.</p>
+  <h2 id="Focus">Extended Focus Lock</h2>
+  <p>The Microscope is capable of providing drift correction using a reflection based autofocus system. This is augmented by a translatable tube lens that extends the lock range to approximately 1mm. The LifeHack system additionally includes an infra-red camera and LED to enable brightfield imaging concurrently with fluorescence imaging. This means that image or bead based drift correction can be implemented without affecting data collection.</p>
   
   <h2 id="TIRF">Ring TIRF for Excelent Nignal to Noise</h2>
   <p>TIRF and HILO illumination are provided by the incorporated pair of Galvo-scanning mirrors. These mirrors are also capable of oscillating rapidly which allows for the beam to be scanned in circles at 100s of Hz. This enables the use of ring TIRF whereby through the course of an image the beam illuminates the coverslip from all angles reducing shadowing or artifacts caused by imperfections in the coverslip or inhomogeneities in the sample.</p>
@@ -176,10 +176,11 @@ function closeNav() {
     <li><b>Main Body:</b> Includes the necessary structure for the optical paths, sample stage and camera for imaging. This includes components to allow for ring TIRF and IR based autofocus systems. </li>
   </ul>
   <img src="Images/Module-Structure.jpg" width="90%">
-  <p>The microscope also includes two sub-modules that are associated with the <b>Main Body</b> of the system but can be encorporated separately into another system to add functionality:</p>
+  <p>The microscope also includes three sub-modules that are associated with the <b>Main Body</b> of the system but can be encorporated separately into another system to add functionality:</p>
   <ul>
     <li><b>Incubation Box:</b> A custom acryllic box enclosing the main body. Includes large hatches for easy sample and hardware manipulation.</li>
     <li><b>Focus Shifter:</b> Normally encompassed by the main body but effective with any system. Extends the working range of reflection based autofocus systems using a translatable tube lens.</li>
+    <li><b>Infra-red Image Based Autofocus:</b> Normally encompassed by the main body but effective with any system. Offers deep brightfield image based autofocused along-side flourescence data collection.</li>
   </ul>
 
   <a class="button-design" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
