@@ -62,8 +62,9 @@
 
 <div class="sidenav">
   <a href="#Description">Description</a>
-  <a href="#Construction">Construction</a>
   <a href="#Parts">Parts</a>
+  <a href="#Construction">Construction</a>
+  <a href="#Software">Software</a>
   <hr> 
   <p>Project Contibutors: Josh Edwards, Seamus Holden</p>
   <p>Website by Josh Edwards</p>
@@ -88,51 +89,30 @@
 
     <img src="Images/Focus-Shifter-Line.png" width="40%">
   
+    <h1 id="Parts">Parts</h1><hr>
+    <iframe src="Parts-List/FocusShifter-Parts.htm" width="100%" height="500px" title="Parts"></iframe>
+    <a class="button-design" href="Parts-List/FocusShifter-Parts.xlsx">&#8681; Download &#8681;</a>
+
+    <h2>Custom Components</h2>
+    <ul>
+        <li><a href="Parts/Motor-cage-coupler.stl">Motor mount</a></li>
+        <li><a href="Parts/Arduino-Box-Bottom.stl">Arduino box (bottom)</a></li>
+        <li><a href="Parts/Arduino-Box-Top.stl">Arduino box (top)</a></li>
+    </ul>
 
     <h1 id="Construction">Construction</h1><hr>
 
     <p>Need Construction / alignment tips from Seamus</p>
 
     <a class="button-design" href="https://a360.co/2V3VLqd">&#x1f441; View CAD Design Online &#x1f441;</a>
-    
-    <h2>Electronics:</h2>
-    <ul>
-      <li> ASI crisp or other reflection based autofocus system</li>
-      <li> Arduino Uno</li>
-      <li> Adafruit motor shield v2.3</li>
-      <li> 12V stepping motor, Unipolar Hybrid Stepper Motor 1.8°, 0.10Nm, 12 V dc, 400 mA, 6 Wires RS Stock No. 191-8299</li>
-      <li> PCB headers</li>
-      <li> 12V power supply: Plugtop PSU UK unregulated 3-12Vdc 6W RS Stock no.: 6158880</li>
-      <li> Pulley: MXL Plastic Pulley with insert teeth 18 RS Stock no.: 7784714</li>
-      <li> 2x MXL Rubber Timing Belt W1/4, L 12.00 in.  RS Stock no.: 7785089</li>
-      <li> Wires</li>
-      <li> dpdt switch</li>
-      <li> Non latching button</li>
-      <li> Spade crimp connectors</li>
-    </ul>
-    <h2>Optics & Optomechanics</h2>
-    <ul>
-      <li> 1” F=100mm biconvex lens (NIR coated)</li>
-      <li> SM1 Zoom Housing for Ø1" Optics, Non-Rotating, 2" (50.8 mm) Travel SM1NR1</li>
-      <li> Zoom housing ? cage adaptors:</li>
-      <li> 2x LCP02/M</li>
-      <li> SM1T10 SM1 (1.035"-40) Coupler, External Threads, 1" Long</li>
-      <li> Motor to ½” post adaptor: CP06F/M</li>
-      <li> 20 cm of cage rods</li>
-      <li> CRISP mounted on cage plate adaptor</li>
-      <li> LCP01/M</li>
-      <li> SM2A6</li>
-      <li> C Mount to SM1 thread adaptor.</li>
-    </ul>
-
     <h2>Set Up</h2>
-    <p> The Thorlabs zoom lens housing is controlled with a stepper motor, connected via a pulley and timing belt. Bizarrely, I could not find an easy out of the box way of adding pulley teeth to a cylindrical object (the zoom housing). As our application was low torque, I took the very low tech approach of chopping up a second timing belt, and gluing it inside out onto the outside of the zoom housing. The glued timing belt then acts as a makeshift pulley.</p>
+    <p> The Thorlabs zoom lens housing is controlled with a stepper motor, connected via a 3d printed pulley (pushed over the housing) and a timing belt.</p>
  
     <p> Wire the motor to the Adafruit control board in 6-wire configuration. Ensure to connect an external 12V power supply to the Arduino board to supply sufficient power to the motor.</p>
 
-    <p> Code is included to control the stepper motor and microscope focus via Arduino. Download the Arduino IDE, and open the Arduino focus-controller.ino sketch. Install the <b>_Adafruit\_Motor\_Shield\_V2\_Library_</b> via the <b>_Sketch\>Include Library\>Manage Libraries_</b> interface. Upload the code to the Arduino board.</p>
+    <p> <a href="#Software">Code</a> is included to control the stepper motor and microscope focus via Arduino. Download the Arduino IDE, and open the Arduino focus-controller.ino sketch. Install the <b>_Adafruit\_Motor\_Shield\_V2\_Library_</b> via the <b>_Sketch\>Include Library\>Manage Libraries_</b> interface. Upload the code to the Arduino board.</p>
 
-    <p> Connect to the Arduino board and control the motor using the Arduino (or any other) serial monitor interface.</p>
+    <p> Connect to the Arduino board and control the motor using the Arduino (or any other) serial monitor interface. Commands are encroporated to move the motor, and hence the lens, in both directions and to a zero point. There are also commands to adjust movement limits and speed.</p>
 
     <p> Axial magnification is proportional to the square of the lateral magnification. In order for a tube lens shift of several mm to cause sufficient focal shift, we need to use a shorter focal length tube lens for the autofocus, compared to the imaging tube lens. In our case, the (Nikon) imaging tube lens is f=200mm, and the autofocus is f=100mm, reducing the axial autofocus magnification by a factor of 4 – this gives us an ~10 um lock range.</p>
     
@@ -158,18 +138,7 @@
     <img src="Images/Switch-Connected.jpg" width="40%" style="margin-bottom:1px;margin-top:1px">
     <img src="Images/Button-Connected.jpg" width="40%" style="margin-top:1px">
 
-    <h1 id="Parts">Parts</h1><hr>
-    <iframe src="Parts-List/FocusShifter-Parts.htm" width="100%" height="500px" title="Parts"></iframe>
-    <a class="button-design" href="Parts-List/FocusShifter-Parts.xlsx">&#8681; Download &#8681;</a>
-
-    <h2>Custom Components</h2>
-    <ul>
-        <li><a href="Parts/Motor-cage-coupler.stl">Motor mount</a></li>
-        <li><a href="Parts/Arduino-Box-Bottom.stl">Arduino box (bottom)</a></li>
-        <li><a href="Parts/Arduino-Box-Top.stl">Arduino box (top)</a></li>
-    </ul>
-
-    <h1 id="Software">Software</h1>
+    <h1 id="Software">Software</h1><hr>
 
     <p>Software is included to be uploaded and run on the arduino. This will function either through serial command or control button input.</p>
 
