@@ -24,8 +24,8 @@ body, html {
   
   .page {
     text-align: justify;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 22.5%;
+    margin-right: 22.5%;
     font-size: 15px;
     line-height:1.6;
     background-color: white;
@@ -124,7 +124,7 @@ body, html {
   }
   
   .sidenav {
-    width: 24%;
+    width: 21.5%;
     position: fixed;
     z-index: 1;
     top: auto;
