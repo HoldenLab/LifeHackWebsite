@@ -111,8 +111,6 @@ function closeNav() {
 
   <p>TIRF microscopy is frequently used to study thin samples as its short illumination range dramatically reduces background fluorescence. The most common way of achieving this is to illuminate the coverslip from the edge of the objective at an angle beyond the critical angle. Illuminating in such a way from one point can lead to artefacts in the image due to inhomogeneities at the interface between the sample and the coverslip. Rapidly spinning the beam around the entire circumference of the objective using Galvo mirros greatly reduces this as an averaging effect occurs.</p>
 
-  <p><b>Add Alignment, and Calibration.</b></p>
-
   <h2>Software</h2>
 
   <p>Python software is provided to control the Galvos to produce ring TIRF illumination. The graphical user interface is described below.</p>
@@ -129,6 +127,14 @@ function closeNav() {
     <img src="Images/NI-board.jpg" width="100%">
     <img src="Images/NI-board-cover.jpg" width="100%">
   </div>
+
+  <h2>Alignment and Calibration</h2>
+
+  <ul>
+    <li>Before connecting the Galvo to the rest of the system, attach the alignment laser to its input and a target/iris on an SM1 tube to the output.</li>
+    <li>Zero the Galvo using the "X-shift" and "Y-shift" settings on the software GUI.</li>
+    <li>Attach the Galvo to the system and zero the combination of it and the turning lens pair immediately before it.</li>
+  </ul>
 
   <h1 id="Parts">Parts</h1><hr>
   <iframe src="Parts-List/MainBody-Parts.htm" width="100%" height="500px" title="Parts"></iframe>
