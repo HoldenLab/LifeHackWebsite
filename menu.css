@@ -68,7 +68,7 @@ body, html {
   }
   
   .hero-image-home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Microscope-Full.JPG");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Microscope-Full.PNG");
     height: 100%;
     min-height: 4.5cm;
     background-position: center;
@@ -80,7 +80,7 @@ body, html {
   }
   
   .hero-image-home:hover {
-    background-image: url("Images/Microscope-Full.JPG");
+    background-image: url("Images/Microscope-Full.PNG");
     height: 100%;
     min-height: 4.5cm;
     background-position: center;
@@ -112,7 +112,7 @@ body, html {
   }
 
   .hero-image-BeamExpansion {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Beam-Expansion-Module.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Beam-Expansion-Module.PNG");
     height: 100%;
     min-height: 4.5cm;
     background-position: center;
@@ -124,7 +124,7 @@ body, html {
   }
   
   .hero-image-BeamExpansion:hover {
-    background-image: url("Images/Beam-Expansion-Module.jpg");
+    background-image: url("Images/Beam-Expansion-Module.PNG");
     height: 100%;
     min-height: 4.5cm;
     background-position: center;
@@ -134,7 +134,7 @@ body, html {
   }
   
   .hero-image-Excitation {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Excitation-Module.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Excitation-Module.png");
     height: 100%;
     min-height: 4.5cm;
     background-position: center;
@@ -146,7 +146,7 @@ body, html {
   }
   
   .hero-image-Excitation:hover {
-    background-image: url("Images/Excitation-Module.jpg");
+    background-image: url("Images/Excitation-Module.png");
     height: 100%;
     min-height: 4.5cm;
     background-position: center;
