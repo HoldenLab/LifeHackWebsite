@@ -178,7 +178,7 @@ body, html {
   }
 
   .hero-image-IncubationBox {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Incubation-Box.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Incubation-Box.png");
     height: 100%;
     min-height: 4.5cm;
     background-position: center;
@@ -190,7 +190,7 @@ body, html {
   }
   
   .hero-image-IncubationBox:hover {
-    background-image: url("Images/Incubation-Box.jpg");
+    background-image: url("Images/Incubation-Box.png");
     height: 100%;
     min-height: 4.5cm;
     background-position: center;
