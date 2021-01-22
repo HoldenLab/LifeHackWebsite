@@ -45,7 +45,7 @@ body, html {
     cursor: pointer;
     text-decoration: none;
     top: 0.5%;
-    left: 0.5%;
+    right: 0.5%;
     font-size: 22pt;
     position: fixed;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
