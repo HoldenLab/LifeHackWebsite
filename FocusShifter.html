@@ -53,10 +53,15 @@
   </script>
   
   <div class="hero-image">
-    <a class="button" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
     <div class="hero-text">
       <h1 style="font-size:50px">Focus Shifter</h1>
     <p style="font-size:25px">Range Extender for Reflection Based Autofocus</p>
+    </div>
+  </div>
+
+  <div class="nav-wrapper" style="height:80px;">
+    <div id="navbar">
+      <a href="javascript:void(0)" onclick="openNav()">&#9776; Menu</a>
     </div>
   </div>
 
@@ -153,5 +158,21 @@
   <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
   <a href="https://blogs.ncl.ac.uk/holdenlab/">Holden Lab Website</a>
 </div>
+
+<script>
+  window.onscroll = function() {myFunction()};
+  
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+  
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+  </script>
+
 </body>
 </html>
