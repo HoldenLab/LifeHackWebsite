@@ -112,7 +112,7 @@ body, html {
     text-align: right;
     padding: 6px 20px 6px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 0.9vw;
     color: #f2f2f2;
     display: block;
   }
@@ -126,7 +126,7 @@ body, html {
     text-align: right;
     padding: 6px 20px 6px 16px;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 8.5px;
     color: #f2f2f2;
     display: block;
     line-height:0.6;
