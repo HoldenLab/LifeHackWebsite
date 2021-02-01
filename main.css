@@ -19,7 +19,15 @@ body, html {
   
   h1 {
     text-align: center;
-    font-size: 40px;
+    font-size: 2.5vw;
+    }
+
+  h2 {
+    font-size: 1.5vw;
+    }
+
+  h3 {
+    font-size: 1.2vw;
     }
   
   .page {
