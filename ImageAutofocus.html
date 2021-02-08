@@ -116,13 +116,32 @@
 
     <h3>Installation</h3>
 
-    <p>From the folder "dist" in the GitHub repository, copy "DriftCorrectRH.jar" into the Micromanager "mmplugins" directory. The required dependencies are located in the "lib" subfolder, these can be copied over to the "plugins/Micro-Manager" folder in the Micromanager directory.</p>
+    <p>From the folder "dist" in the GitHub repository, copy "DriftCorrectRH.jar" and the content of the "lib" folder into the Micromanager "plugins/micro-manager" directory. In the case of these files already existing in the target directory, the target directory files should be retained.</p>
 
     <p>The camera used for this module must be added to the MicroManager config file. Instructions are available <a href="https://micro-manager.org/wiki/Spinnaker">here</a> to install the required drivers.</p>
 
-    <p>The plugin may now be launched in MicroManager from "plugins/Beta/NanoJ Online Drift Correction". On opening, the Config file containing the camera's device adapter should be loaded using the "load device" button.</p>
+    <p>The plugin may now be launched in MicroManager from "plugins/Beta/NanoJ Online Drift Correction". On opening, the Config file containing the camera's device adapter should be loaded using the "select configuration file" and "load hardware" buttons under the configuration tab.</p>
 
     <h3>Use</h3>
+	
+	<img src="Images/DriftCorrect.jpg" width="100%">
+	
+	<p>To use the plugin, First "get background image" to perform background subtraction. The stage will scan around the sample to record multiple fields of view for averaging.</p>
+	<p>Next "calibrate pixel size" to ensure that the magnitude of drift is measured correctly</p>
+	<p>"Start" takes a reference z-stack and begins the drift correction protocol selected using the puldown menu.</p>
+	
+	<h3>Variables</h3>
+	<ul>
+	  <li><b>Background subtraction step size:</b> Lateral move between background subtraction images.</li>
+	  <li><b>Calibration step size:</b> Sets the depth between the images of the reference z-stack taken at the beggining of a run.</li>
+	  <li><b>Exposure time:</b> Exposure time of the camera, should be balanced to minimise LED power and motion blur.</li>
+	  <li><b>Maximum ROI to analyse:</b> Sets the size of the area to perform cross-correlation on.</li>
+	  <li><b>Pixels to trim from edges:</b> Removes edge pixels from cross-correlation calculations.</li>
+	  <li><b>Step size for Z correction:</b> </li>
+	  <li><b>Alpha (scale for corrections):</b> Scale factor for corrections to avoid over/under corrections (applies to Z only).</li>
+	  <li><b>Time between corrections:</b> Sets the dwell time between stage corrections to avoid high frequency corrections to noise. Must be set greater than the set exposure time.</li>
+	  <li><b>Maximum translation:</b> Limit on shift to prevent stage crashing.</li>
+	</ul>
 
   </div>
 
