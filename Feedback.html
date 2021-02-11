@@ -7,6 +7,8 @@
 
   <link rel="stylesheet" type="text/css" href="menu.css">
 
+  <link rel="stylesheet" type="text/css" href="Form.css">
+
 </head>
 <body onload="closeNav()">
 
@@ -66,11 +68,14 @@
   </div>
 
   <div class="page">
+
+    <p>We are happy to answer questions relating to the microscope system will do our best to resolve bug reports. We would also love to hear about your usage of copies or derivatives of it whether it be here on on twitter using #</p>
+
     <h1>Feedback Form</h1><hr>
     <form action="https://formspree.io/f/meqpdybw" method="post">
-        <label for="email" style="font-size:17px">Your email address:</label>
-        <input name="Email" id="email" type="email" size="50" required></textarea><br>
-        <label for="module" style="font-size:17px">Which module does your query relate to?</label>
+        <label for="email" style="font-size:17px">Email:</label>
+        <input name="Email" id="email" type="email" size="50" placeholder="Your email address" required></textarea><br>
+        <label for="module" style="font-size:17px">Which module does your feedback relate to?</label>
         <select name="Module" id="module">
             <option value="All">All</option>
             <option value="MainBody">Main Body</option>
@@ -81,15 +86,15 @@
             <option value="IncubationBox">Incubation Box</option>
             <option value="Operation">Operation</option>
         </select><br>
-        <label for="module" style="font-size:17px">What type of query do you wish to submit?</label>
+        <label for="module" style="font-size:17px">What type of feedback do you wish to submit?</label>
         <select name="Topic" id="topic">
             <option value="Question">Question</option>
             <option value="Usage">Usage</option>
             <option value="Issue">Issue</option>
         </select><br>
         <label for="message" style="font-size:17px">Your message:</label><br>
-        <textarea name="Message" id="message" type="message" rows="20" cols="70"></textarea><br>
-        <input type="submit">
+        <textarea name="Message" id="message" type="text" rows="20" placeholder="Message text"></textarea><br>
+        <input type="submit" value="Submit">
     </form>
 
 </div>
