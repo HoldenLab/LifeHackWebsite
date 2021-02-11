@@ -160,17 +160,19 @@ function closeNav() {
   <h2 id="DesignPhilosophy">Design Philosophy</h2>
   <p>To achieve the goal of creating a system that is adaptable and future proof we have designed the microscope around 3 main modules and 3 sub-modules. These modules may be modified individually or used in conjuntion with other systems. The system is almost exclusively made from either commercially available components or 3D printed parts with ease of reproducibility in mind.</p>
   <a href="https://www.autodesk.co.uk/products/fusion-360/overview"><img src="Images/Fusion360-logo.png" width="30%"></a>
-  <p>The designs for the microscope have been modelled using Autodesk's Fusion 360 software. These are readily available to view online and download from each module's page. These designs allow for users to adapt the system to suit their need and function as easy to follow plans during the build process.</p>
+  <p>The designs for the microscope have been modelled using Autodesk's Fusion 360 software. These designs allow for users to adapt the system to suit their need and function as easy to follow plans during the build process. The entire set of CAD files for the microscope are readily available to view online and download from each module's page.</p>
 
   <a class="button-design" href="https://a360.co/34cZwOU">&#x1f441; View CAD Design Online &#x1f441;</a>
 
+  <p>A comprehensive parts list, subdivided by module, is included to aid replication builds. The complete parts list can be purchased for approximately £ (as of 2020).</p>
+
   <h2 id="LiveCell">Live Cell Capable</h2>
-  <p>An incubator design enclosing the main body of the microscope is included as part of the system with a wide array of access hatches for both sample manipulation and microscope alignment. This not only fulfils the essential requirement of keeping living samples at an optimal and consistent temperature to grow but also provides almost complete thermal stability for the microscope body thereby drastically reducing drift during imaging.</p>
+  <p>An incubator design enclosing the main body of the microscope is included as part of the system with a wide array of access hatches for both sample manipulation and microscope alignment. This not only fulfils the essential requirement of keeping living samples at an optimal and consistent temperature to grow but also provides improved envirnomental stability for the microscope body thereby drastically reducing drift during imaging.</p>
 
   <h2 id="Focus">Extended Focus Lock</h2>
   <p>The Microscope is capable of providing drift correction using a reflection based autofocus system. As cells are three dimensional and imaging only at the coverslip is not sufficent, this system is augmented by a translatable tube lens that extends the lock range to approximately 10&mu;m. This allows for investigation of internal cellular structures.</p>
 
-  <p> The LifeHack system additionally includes an infra-red camera and LED to enable brightfield imaging concurrently with fluorescence imaging. This means that image or bead based drift correction can be implemented without affecting data collection. This camera based system also provides autofocus lock even deeper into samples (50&mu;m) as demonstrated in "FtsZ treadmilling is essential for Z-ring condensation and septal constriction initiation in bacterial cell division", Whitley et al, bioRxiv 2020.</p>
+  <p> The LifeHack system additionally includes an infra-red camera and LED to enable brightfield imaging concurrently with fluorescence imaging. This means that image or bead based drift correction can be implemented without affecting data collection. This camera based system also provides autofocus lock even deeper into samples (50&mu;m) as demonstrated in "FtsZ treadmilling is essential for Z-ring condensation and septal constriction initiation in bacterial cell division", Whitley et al, bioRxiv 2020. This has now been extended to provide live drift correction across all three dimensions.</p>
   
   <h2 id="TIRF">Ring TIRF for Excellent Signal to Noise</h2>
   <p>TIRF and HILO illumination are provided by the incorporated pair of Galvo-scanning mirrors. These mirrors are capable of oscillating rapidly which allows for the beam to be scanned in circles at 100s of Hz. This enables the use of ring TIRF whereby through the course of an image the beam illuminates the coverslip from all angles reducing shadowing or artifacts caused by imperfections in the coverslip or inhomogeneities in the sample.</p>
@@ -178,8 +180,8 @@ function closeNav() {
   <h2 id="Astig">Astigmatic 3D</h2>
   <p>3D localisation is provided by a cylindrical lens positioned in a 3D printed box immediately before the camera. This contains a rail mounting system to allow for axial adjustment of the lens position. Sliding the lens towards and away from the camera will respectively reduce and increase the severity of the astigmatism at the camera. A stronger astigmatism enables more accurate localisation in z as the ellipticity of the PSF will change more rapidly as the source position does.</p>
   
-  <h2 id="MultiColour">Multi Colour Imaging</h2>
-  <p>  Finally, the system is capable, in its base form, of 2 channel super-resolution imaging. This is achieved by its 4 lasers (405nm, 488nm, 561nm, 642nm) in the excitation module. This gives two activation and two excitation wavelengths allowing for 2 photoactivatable fluorophores to be imaged concurrently or, of course, 4 standard fluorophores if you can find an experiment that will work for that.</p>
+  <h2 id="MultiColour">High Power Multi Colour Imaging</h2>
+  <p>The system is capable, in its base form, of simultaneous 2 channel and sequential 4 channel microscopy. This is achieved by its 4 lasers (405nm, 488nm, 561nm, 642nm) in the excitation module. The Lasers range in maximum power from 100mW to 1W and follow an open beam path from source to sample for greater efficiency.</p>
 
   <h1 id="ProofOfConcept">Proof of Concept</h1><hr>
 

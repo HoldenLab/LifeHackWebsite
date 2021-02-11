@@ -113,7 +113,7 @@
 
   <h1 id="Software">Software</h1><hr>
   <h2>Micromanager</h2>
-  <p>We use <a href="https://micro-manager.org/wiki/Download_Micro-Manager_Latest_Release">Micromanager gamma 2.0.0-gamma1_20210124</a> as our microscope control software. The config file to work with LifeHack is available <a href="https://github.com/HoldenLab/LifeHack/blob/master/Operation/LifeHack_MMconfig.cfg">here</a>. To be able to image at the high speeds required for STORM imaging the default ImageJ.cfg file in the micro-manager directory must be replaced with <a href=https://github.com/HoldenLab/LifeHack/blob/master/Operation/ImageJ.cfg>ours</a>.</p>
+  <p>We use <a href="https://micro-manager.org/wiki/Download_Micro-Manager_Latest_Release">Micromanager gamma 2.0.0-gamma1_20210124</a> as our microscope control software. The config file to work with LifeHack is available <a href="https://github.com/HoldenLab/LifeHack/blob/master/Operation/LifeHack_MMconfig.cfg">here</a>. To be able to record data at the high speeds required for STORM imaging the default ImageJ JAVA garbage collector must be changed to the CMS garbage collector. Replace the ImageJ.cfg file in the micro-manager directory with <a href=https://github.com/HoldenLab/LifeHack/blob/master/Operation/ImageJ.cfg>ours</a>.</p>
 
   <img src="Images/MMconfig.png" width="60%">
 
@@ -131,7 +131,9 @@
 
   <h1 id="RegularAlignment">Regular Alignment</h1><hr>
 
-  <p>Regular alignment of the system is conducted using the mirror pair at the back port of the microscope. A live image of a fluorescent alignment slide and a spot on the ceiling above serve as reference points.</p> 
+  <p>Regular alignment of the system is conducted using the mirror pair at the back port of the microscope. A live image of a fluorescent alignment slide and a spot on the ceiling above serve as reference points.</p>
+
+  <p>Please observe all appropriate laser safety precautionswhen performing alignment with an open, vertical laser beam, and operate lasers at minimum power required for alignement.</p>
 
   <img src="Images/AlignmentMirrors.jpg" width="40%">
 
