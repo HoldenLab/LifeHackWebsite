@@ -70,6 +70,7 @@
   <a href="#Parts">Parts</a>
   <a href="#Construction">Construction</a>
   <a href="#Software">Software</a>
+  <a href="https://github.com/HoldenLab/LifeHack/tree/master/Focus%20Shifter">Go to GitHub</a>
   <a href="https://github.com/HoldenLab/LifeHack/issues">Report Bug/Feedback</a>
   <hr> 
   <p>Project Contributors: Josh Edwards, Seamus Holden</p>
@@ -86,8 +87,9 @@
  
     <img src="Images/Focus-Shifter.jpg" width="60%">
 
-    <p>LifeHack incorporates a reflection based ASI CRISP as its primary method of maintaining focus. Similar to many other systems, it reflects an IR beam off a coverslip, and uses shifts in the position of this beam to maintain constant objective-slide separation by closed loop control. 
-    The limitation of this approach is that this approach only allows for focus lock at/ very near to the coverslip, in a range &lt; 1 um for a 100x high NA objective, or optionally, to offset the lock position a fixed amount by physically displacing the autofocus device. We wanted to image cells at different heights within the same sample, so this approach was not sufficient for us.</p>
+    <p>LifeHack incorporates a reflection based ASI CRISP as its primary method of maintaining focus. Similar to many other systems, it reflects an IR beam off a coverslip, and uses shifts in the position of this beam to maintain constant objective-slide separation by closed loop control.</p>
+    
+    <p>The limitation of this approach is that it only allows for focus lock at/ very near to the coverslip, in a range &lt; 1 um for a 100x high NA objective. The lock position can be offset by a fixed amount by physically displacing the autofocus device. However, to image cells at different heights within the same sample, this approach is not sufficient.</p>
     
     <p>As the Focus Shifter module on LifeHack has its own beam path and tube lens we were able to produce large changes in the lock position by implementing a motorized Arduino controlled tube lens on this path. This effectively offsets the lock position (the coverslide) and the camera/ excitation focus by a variable amount, in our case allowing ~ 10 um of lock range on 100x NA 1.49 TIRF objective, instead of the standard &lt; 1 um with a fixed autofocus tube lens.</p>
     
@@ -157,7 +159,6 @@
 <div class="bottomnav">
   <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
   <a href="https://blogs.ncl.ac.uk/holdenlab/">Holden Lab Website</a>
-  <a href="https://github.com/HoldenLab/LifeHack">GitHub Repository</a>
 </div>
 
 <script>

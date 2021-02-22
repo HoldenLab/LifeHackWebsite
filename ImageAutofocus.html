@@ -71,9 +71,10 @@
     <a href="#Parts">Parts</a>
     <a href="#Construction">Construction</a>
     <a href="#Software">Software</a>
+    <a href="https://github.com/HoldenLab/LifeHack/tree/master/Image%20Autofocus">Go to GitHub</a>
     <a href="https://github.com/HoldenLab/LifeHack/issues">Report Bug/Feedback</a>
     <hr> 
-    <p>Project Contributors: Josh Edwards, Seamus Holden</p>
+    <p>Project Contributors: Josh Edwards, Kevin Whitley, Seamus Holden</p>
     <p>Website by Josh Edwards</p>
     <p>Updated: February 2021</p>
   </div>
@@ -102,13 +103,13 @@
   
     <p>As this module has only one pathway and no degrees of freedom for adjustment it can be constructed and attached to the system simply following the designs. The combiner cube is the only part that needs alignment and this is detailed in the <a href="MainBody.html#Construction">Main Body</a> module.</p>
 
-    <p>In principle this sytem can operate at a range of wavelengths. However, the suggested camera suffers from reduced sensitivity through the IR range. As such poor performance has been observed when operating this system at 1050nm due to low SNR. To achieve a sufficient SNR whilst avoiding clashing with the CRISP system operating at 850nm we recomend operating with 940nm illumination.</p>
+    <p>In principle this sytem can operate at a range of wavelengths. However, the suggested camera suffers from reduced sensitivity through the IR range. As such, poor performance has been observed when operating this system at 1050nm due to low SNR. To achieve a sufficient SNR whilst avoiding clashes with the CRISP system operating at 850nm we recomend operating with 940nm illumination.</p>
 
     <img src="Images/IMX250_sensitivity.jpg" width="40%">
 
     <h1 id="Software">Software</h1><hr>
 
-    <p>This is a MicroManager hardware autofocus plugin developed between the Henriques and Holden laboratories. This plugin will perform microscopy autofocus using the cross correlated signal from infrared brightfield microscopy. It is based on the principle described in McGorty et al, Optical Nanoscopy 2013. As such, this software is not coupled to any particular hardware and may be used with cameras and stages other than those described here.</p>
+    <p>This is a MicroManager hardware autofocus plugin developed between the Henriques and Holden laboratories. This plugin will perform microscopy autofocus and lateral drift correction using the cross correlated signal from infrared brightfield microscopy. It is based on the principle described in McGorty et al, Optical Nanoscopy 2013. As such, this software is not coupled to any particular hardware and may be used with cameras and stages other than those described here.</p>
 
     <a class="button-design" href="https://github.com/HoldenLab/DeepAutoFocus">&#x1f441; Get Software from GitHub &#x1f441;</a>
 
@@ -128,7 +129,7 @@
 	
 	<p>To use the plugin, First "get background image" to perform background subtraction. The stage will scan around the sample to record multiple fields of view for averaging.</p>
 	<p>Next "calibrate pixel size" to ensure that the magnitude of drift is measured correctly</p>
-	<p>"Start" takes a reference z-stack and begins the drift correction protocol selected using the puldown menu.</p>
+	<p>"Start" takes a reference z-stack and begins the drift correction protocol selected using the pulldown menu.</p>
 	
 	<h3>Variables</h3>
 	<ul>
@@ -148,7 +149,6 @@
   <div class="bottomnav">
     <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
     <a href="https://blogs.ncl.ac.uk/holdenlab/">Holden Lab Website</a>
-    <a href="https://github.com/HoldenLab/LifeHack">GitHub Repository</a>
   </div>
 
   <script>
