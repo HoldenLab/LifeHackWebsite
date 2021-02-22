@@ -128,18 +128,18 @@
 	<img src="Images/DriftCorrect.jpg" width="100%">
 	
 	<p>To use the plugin, First "get background image" to perform background subtraction. The stage will scan around the sample to record multiple fields of view for averaging.</p>
-	<p>Next "calibrate pixel size" to ensure that the magnitude of drift is measured correctly</p>
-	<p>"Start" takes a reference z-stack and begins the drift correction protocol selected using the pulldown menu.</p>
+	<p>Next "calibrate pixel size" to calculate the pixels-to-nm conversion factor. The stage will move laterally in user-defined steps and calculate the pixel displacements by cross-correlation.</p>
+	<p>"Start" takes a reference z-stack (if using XYZ or Z correction) or a single reference image (if using XY correction) and begins the drift correction protocol selected using the pulldown menu.</p>
 	
 	<h3>Variables</h3>
 	<ul>
-	  <li><b>Background subtraction step size:</b> Lateral move between background subtraction images.</li>
-	  <li><b>Calibration step size:</b> Sets the depth between the images of the reference z-stack taken at the beggining of a run.</li>
+	  <li><b>Background subtraction step size:</b> Lateral move between background subtraction images. We find that a step size of 50 um works well.</li>
+	  <li><b>Calibration step size:</b> Lateral move between images during the pixels-to-nm calibration routine. We find that a step size of 1-5 um works well.</li>
 	  <li><b>Exposure time:</b> Exposure time of the camera, should be balanced to minimise LED power and motion blur.</li>
-	  <li><b>Maximum ROI to analyse:</b> Sets the size of the area to perform cross-correlation on. The limits of this are camera dependant. For the Blackfly camera used here the ROI cannot be reduced below 12,000px.</li>
+	  <li><b>Maximum ROI to analyse:</b> Sets the size of the area to perform cross-correlation on. The limits of this are camera dependant. For the Blackfly camera used here the ROI cannot be reduced below 1200x1200 px.</li>
 	  <li><b>Pixels to trim from edges:</b> Removes edge pixels from cross-correlation calculations.</li>
-	  <li><b>Step size for Z correction:</b> Sets the step size for corrections made in the Z axis.</li>
-	  <li><b>Alpha (scale for corrections):</b> Scale factor for corrections to avoid over/under corrections (applies to Z only).</li>
+	  <li><b>Step size for Z correction:</b> Sets the depth between the images of the reference z-stack taken at the beginning of a run.</li>
+	  <li><b>Alpha (scale for corrections):</b> User-defined scale factor for corrections along Z axis as described in McGorty et al. 2013 eq. 4. A value too small can result in slow corrections, although a value too large can result in overcorrections and 'ringing'. We recommend starting with a lower value like 1.5 and adjusting as necessary.</li>
 	  <li><b>Time between corrections:</b> Sets the dwell time between stage corrections to avoid high frequency corrections to noise. Must be set greater than the set exposure time.</li>
 	  <li><b>Maximum translation:</b> Limit on shift to prevent stage crashing.</li>
 	</ul>
