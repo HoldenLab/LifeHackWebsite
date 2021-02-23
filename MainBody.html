@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="menu.css">
 
 </head>
-<body onload="closeNav()">
+<body>
 
   <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -47,6 +47,10 @@ function openNav() {
 
 function closeNav() {
   document.getElementById("myNav").style.height = "0px";
+}
+
+function LoadNav() {
+  document.getElementById("myNav").style.display = "block";
 }
 </script>
 
