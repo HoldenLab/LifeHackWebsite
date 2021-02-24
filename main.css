@@ -141,9 +141,9 @@ body, html {
     line-height:1.5;
   }
   
-  @media screen and (max-height: 450px) {
+  @media only screen and (orientation: portrait) {
     .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav a {font-size: 11px;}
   }
 
   .bottomnav {
