@@ -104,6 +104,14 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .hero-text h1 {
+    font-size:2.5vw
+  }
+
+  .hero-text p {
+    font-size:1.2vw
+  }
   
   .sidenav {
     width: 21.5%;
@@ -142,8 +150,13 @@ body, html {
   }
   
   @media only screen and (orientation: portrait) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 11px;}
+    .sidenav a {font-size: 10px;}
+    .sidenav p {font-size: 7px;}
+    h1 {font-size: 20pt;}
+    h2 {font-size: 18pt;}
+    h3 {font-size: 16pt;}
+    .hero-text h1 {font-size: 25pt;}
+    .hero-text p {font-size: 15pt;}
   }
 
   .bottomnav {

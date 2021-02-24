@@ -30,6 +30,18 @@ body, html {
   color: white;
 }
 
+.hero-text h1 {
+  font-size: 4vw
+}
+
+.hero-text p {
+  font-size: 1.3vw
+}
+
+.hero-text p2 {
+  font-size: 1vw
+}
+
 .button {
   border: none;
   outline: 0;
@@ -48,16 +60,22 @@ body, html {
   background-color: #333;
   color: white;
 }
+
+@media only screen and (orientation: portrait) {
+    .hero-text h1 {font-size: 30pt;}
+    .hero-text p {font-size: 17pt;}
+    .hero-text p2 {font-size: 10pt;}
+  }
 </style>
 </head>
 <body>
 
 <div class="hero-image">
   <div class="hero-text">
-    <h1 style="font-size:4vw">LifeHack</h1>
-    <p style="font-size:1.3vw">An Open-Source, Modular Microscope for Live & Fixed Cell Single Molecule Imaging</p> 
+    <h1>LifeHack</h1>
+    <p>An Open-Source, Modular Microscope for Live & Fixed Cell Single Molecule Imaging</p> 
     <hr>
-    <p style="font-size:1vw">From the Holden Lab @ Newcastle University</p>
+    <p2>From the Holden Lab @ Newcastle University</p>
     <a class="button" href="home.html">Enter Website</a>
   </div>
 </div>
