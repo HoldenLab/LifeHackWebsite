@@ -4,4 +4,4 @@ This repository contains the source code for the LifeHack microscope's website. 
 
 This can also be run locally by downloading the Repository and opening "Index.html" using your normal web browser.
 
-To visit the LifeHack website, please follow this link: https://holdenlab.github.io/LifeHackWebsite/home.html
+To visit the LifeHack website, please follow this link: https://holdenlab.github.io/LifeHackWebsite/
