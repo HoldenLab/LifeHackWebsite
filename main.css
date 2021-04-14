@@ -166,6 +166,10 @@ body, html {
     }
   }
 
+  @media only screen and (max-height: 250pt) {
+    .hero-image {height: 15%;}
+  }
+
   .bottomnav {
     overflow: hidden;
     background-color: #333;
