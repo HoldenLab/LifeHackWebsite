@@ -95,6 +95,7 @@ body, html {
     background-size: cover;
     position: relative;
     color: white;
+    z-index: 2;
   }
   
   .hero-text {
@@ -169,7 +170,7 @@ body, html {
   @media only screen and (max-height: 250pt) and (orientation: landscape) {
     .hero-image {height: 15%;}
     .sidenav {
-      z-index: -1;
+      z-index: 1;
       top: 1%;
       width: 29.5%;
     }
@@ -194,6 +195,7 @@ body, html {
     bottom: 0;
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 0;
   }
   
   .bottomnav a {
@@ -227,6 +229,7 @@ body, html {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 0.5cm;
     height:1.4cm;
+    z-index: 2;
   }
     
   #navbar a {
