@@ -168,6 +168,19 @@ body, html {
 
   @media only screen and (max-height: 250pt) {
     .hero-image {height: 15%;}
+    .sidenav {width: 24.5%;}
+    .sidenav a {font-size: 10px;}
+    .sidenav p {font-size: 7px;}
+    h1 {font-size: 20pt;}
+    h2 {font-size: 17pt;}
+    h3 {font-size: 16pt;}
+    .hero-text h1 {font-size: 20pt;}
+    .hero-text p {font-size: 14pt;}
+    .page {
+      margin-left: 25.5%;
+      margin-right: 1%;
+      line-height:1.5;
+    }
   }
 
   .bottomnav {
