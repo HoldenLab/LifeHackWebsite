@@ -171,7 +171,6 @@ body, html {
     .hero-image {height: 15%;}
     .sidenav {
       z-index: 1;
-      margin-top: 1.9cm;
       width: 29.5%;
     }
     .sidenav a {font-size: 10px;}
