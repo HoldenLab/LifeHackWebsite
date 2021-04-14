@@ -150,7 +150,7 @@ body, html {
   }
   
   /*@media only screen and (orientation: portrait) {*/
-  @media only screen and (max-width: 430pt) {
+  @media only screen and (max-width: 450pt) {
     .sidenav {width: 24.5%;}
     .sidenav a {font-size: 10px;}
     .sidenav p {font-size: 7px;}
