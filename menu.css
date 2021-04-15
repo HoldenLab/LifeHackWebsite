@@ -56,8 +56,8 @@ body, html {
   
   .grid-container {
     margin:2% 0% 2% 4%;
-    width:90%;
-    height:90%;
+    width:95%;
+    height:95%;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
@@ -71,7 +71,6 @@ body, html {
   .hero-image-home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Microscope-Full.PNG");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -83,7 +82,6 @@ body, html {
   .hero-image-home:hover {
     background-image: url("Images/Microscope-Full.PNG");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -93,7 +91,6 @@ body, html {
   .hero-image-MainBody {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Microscope-body.jpg");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -105,7 +102,6 @@ body, html {
   .hero-image-MainBody:hover {
     background-image: url("Images/Microscope-body.jpg");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -115,7 +111,6 @@ body, html {
   .hero-image-BeamExpansion {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Beam-Expansion-Module.PNG");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -127,7 +122,6 @@ body, html {
   .hero-image-BeamExpansion:hover {
     background-image: url("Images/Beam-Expansion-Module.PNG");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -137,7 +131,6 @@ body, html {
   .hero-image-Excitation {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Excitation-Module.png");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -149,7 +142,6 @@ body, html {
   .hero-image-Excitation:hover {
     background-image: url("Images/Excitation-Module.png");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -159,7 +151,6 @@ body, html {
   .hero-image-FocusShifter {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Focus-Shifter.jpg");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -171,7 +162,6 @@ body, html {
   .hero-image-FocusShifter:hover {
     background-image: url("Images/Focus-Shifter.jpg");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -181,7 +171,6 @@ body, html {
   .hero-image-IncubationBox {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Incubation-Box.png");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -193,7 +182,6 @@ body, html {
   .hero-image-IncubationBox:hover {
     background-image: url("Images/Incubation-Box.png");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -203,7 +191,6 @@ body, html {
   .hero-image-ImageAutofocus {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Image-Autofocus.jpg");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -215,7 +202,6 @@ body, html {
   .hero-image-ImageAutofocus:hover {
     background-image: url("Images/Image-Autofocus.jpg");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -225,7 +211,6 @@ body, html {
   .hero-image-github {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Git-Hub.jpg");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -237,7 +222,6 @@ body, html {
   .hero-image-github:hover {
     background-image: url("Images/Git-Hub.jpg");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -248,7 +232,6 @@ body, html {
   .hero-image-Operation {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("Images/Circuit-Diagram.jpg");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -260,7 +243,6 @@ body, html {
   .hero-image-Operation:hover {
     background-image: url("Images/Circuit-Diagram.jpg");
     height: 100%;
-    min-height: 4.5cm;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
