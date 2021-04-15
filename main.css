@@ -172,6 +172,7 @@ body, html {
     .sidenav {
       top: 1.9cm;
       width: 29.5%;
+      z-index: -1;
     }
     .sidenav a {font-size: 10px;}
     .sidenav p {font-size: 7px;}
