@@ -117,7 +117,7 @@ body, html {
   .sidenav {
     width: 21.5%;
     position: fixed;
-    z-index: 1;
+    z-index: -1;
     top: auto;
     left: 0.5%;
     background: #333;
@@ -194,7 +194,7 @@ body, html {
     bottom: 0;
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    z-index: 0;
+    z-index: -2;
   }
   
   .bottomnav a {
