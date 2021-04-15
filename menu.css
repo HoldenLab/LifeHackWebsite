@@ -49,8 +49,8 @@ body, html {
     .overlay a {font-size: 20px}
     .overlay .closebtn {
     font-size: 40px;
-    top: 15px;
-    right: 35px;
+    top: 10px;
+    right: 10px;
     }
   }
   
@@ -263,5 +263,9 @@ body, html {
   }
 
   @media only screen and (orientation: portrait) {
+    .menu-text h1 {font-size: 17pt;}
+  }
+
+  @media only screen and (max-height: 250pt) and (orientation: landscape) {
     .menu-text h1 {font-size: 17pt;}
   }
