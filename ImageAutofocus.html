@@ -86,7 +86,7 @@
     <hr> 
     <p>Project Contributors: Josh Edwards, Kevin Whitley, Sudeer Peneti, Yann Cesbron, Seamus Holden</p>
     <p>Website by Josh Edwards</p>
-    <p>Updated: February 2021</p>
+    <p>Updated: May 2021</p>
   </div>
 
   <div class="page">
@@ -113,7 +113,7 @@
   
     <p>As this module has only one pathway and no degrees of freedom for adjustment it can be constructed and attached to the system simply following the designs. The combiner cube is the only part that needs alignment and this is detailed in the <a href="MainBody.html#Construction">Main Body</a> module.</p>
 
-    <p>In principle this sytem can operate at a range of wavelengths. However, the suggested camera suffers from reduced sensitivity through the IR range. As such, poor performance has been observed when operating this system at 1050nm due to low SNR. To achieve a sufficient SNR whilst avoiding clashes with the CRISP system operating at 850nm we recomend operating with 940nm illumination.</p>
+    <p>In principle this sytem can operate at a range of wavelengths. However, the suggested camera suffers from reduced sensitivity through the IR range. As such, poor performance has been observed when operating this system at 1050nm due to low SNR. To achieve a sufficient SNR whilst avoiding clashes with the CRISP system operating at 940nm we recomend operating with 850nm illumination.</p>
 
     <img src="Images/IMX250_sensitivity.jpg" width="40%">
 
@@ -134,25 +134,27 @@
     <p>The plugin may now be launched in MicroManager from "plugins/Beta/NanoJ Online Drift Correction". On opening, the <a href="https://github.com/HoldenLab/LifeHack/blob/master/Operation/BlackflyCamera.cfg">Config file</a> containing the camera's device adapter should be loaded using the "select configuration file" and "load hardware" buttons under the configuration tab.</p>
 
     <h3>Use</h3>
+
+    <p>The plugin does not have the ability to trigger the illumination LED so this must be controlled manually. If using this as part of the LifeHack system this can be done through MicroManager.</p>
 	
-	<img src="Images/DriftCorrect.jpg" width="100%">
+	  <img src="Images/DriftCorrect.jpg" width="100%">
 	
-	<p>To use the plugin, First "get background image" to perform background subtraction. The stage will scan around the sample to record multiple fields of view for averaging.</p>
-	<p>Next "calibrate pixel size" to calculate the pixels-to-nm conversion factor. The stage will move laterally in user-defined steps and calculate the pixel displacements by cross-correlation.</p>
-	<p>"Start" takes a reference z-stack (if using XYZ or Z correction) or a single reference image (if using XY correction) and begins the drift correction protocol selected using the pulldown menu.</p>
+	  <p>To use the plugin, First "get background image" to perform background subtraction. The stage will scan around the sample to record multiple fields of view for averaging.</p>
+	  <p>Next "calibrate pixel size" to calculate the pixels-to-nm conversion factor. The stage will move laterally in user-defined steps and calculate the pixel displacements by cross-correlation.</p>
+	  <p>"Start" takes a reference z-stack (if using XYZ or Z correction) or a single reference image (if using XY correction) and begins the drift correction protocol selected using the pulldown menu.</p>
 	
-	<h3>Variables</h3>
-	<ul>
-	  <li><b>Background subtraction step size:</b> Lateral move between background subtraction images. We find that a step size of 50 um works well.</li>
-	  <li><b>Calibration step size:</b> Lateral move between images during the pixels-to-nm calibration routine. We find that a step size of 1-5 um works well.</li>
-	  <li><b>Exposure time:</b> Exposure time of the camera, should be balanced to minimise LED power and motion blur.</li>
-	  <li><b>Maximum ROI to analyse:</b> Sets the size of the area to perform cross-correlation on. The limits of this are camera-dependent. For the Blackfly camera used here the ROI cannot be reduced below 1200x1200 px.</li>
-	  <li><b>Pixels to trim from edges:</b> Removes edge pixels from cross-correlation calculations.</li>
-	  <li><b>Step size for Z correction:</b> Sets the depth between the images of the reference z-stack taken at the beginning of a run.</li>
-	  <li><b>Alpha (scale for corrections):</b> User-defined scale factor for corrections along Z axis as described in McGorty et al. 2013 eq. 4. A value too small can result in slow corrections, although a value too large can result in overcorrections and 'ringing'. We recommend starting with a lower value like 1.5 and adjusting as necessary.</li>
-	  <li><b>Time between corrections:</b> Sets the dwell time between stage corrections to avoid high frequency corrections to noise. Must be set greater than the set exposure time.</li>
-	  <li><b>Maximum translation:</b> Limit on shift to prevent stage crashing.</li>
-	</ul>
+	  <h3>Variables</h3>
+	  <ul>
+	    <li><b>Background subtraction step size:</b> Lateral move between background subtraction images. We find that a step size of 50 um works well.</li>
+	    <li><b>Calibration step size:</b> Lateral move between images during the pixels-to-nm calibration routine. We find that a step size of 1-5 um works well.</li>
+	    <li><b>Exposure time:</b> Exposure time of the camera, should be balanced to minimise LED power and motion blur.</li>
+	    <li><b>Maximum ROI to analyse:</b> Sets the size of the area to perform cross-correlation on. The limits of this are camera-dependent. For the Blackfly camera used here the ROI cannot be reduced below 1200x1200 px.</li>
+	    <li><b>Pixels to trim from edges:</b> Removes edge pixels from cross-correlation calculations.</li>
+	    <li><b>Step size for Z correction:</b> Sets the depth between the images of the reference z-stack taken at the beginning of a run.</li>
+	    <li><b>Alpha (scale for corrections):</b> User-defined scale factor for corrections along Z axis as described in McGorty et al. 2013 eq. 4. A value too small can result in slow corrections, although a value too large can result in overcorrections and 'ringing'. We recommend starting with a lower value like 1.5 and adjusting as necessary.</li>
+	    <li><b>Time between corrections:</b> Sets the dwell time between stage corrections to avoid high frequency corrections to noise. Must be set greater than the set exposure time.</li>
+	    <li><b>Maximum translation:</b> Limit on shift to prevent stage crashing.</li>
+	  </ul>
 
   </div>
 
