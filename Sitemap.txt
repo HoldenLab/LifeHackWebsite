@@ -1,9 +1,0 @@
-https://holdenlab.github.io/LifeHackWebsite/
-https://holdenlab.github.io/LifeHackWebsite/home.html
-https://holdenlab.github.io/LifeHackWebsite/MainBody.html
-https://holdenlab.github.io/LifeHackWebsite/BeamExpansion.html
-https://holdenlab.github.io/LifeHackWebsite/Excitation.html
-https://holdenlab.github.io/LifeHackWebsite/FocusShifter.html
-https://holdenlab.github.io/LifeHackWebsite/IncubationBox.html
-https://holdenlab.github.io/LifeHackWebsite/ImageAutofocus.html
-https://holdenlab.github.io/LifeHackWebsite/Operation.html
