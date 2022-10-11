@@ -116,7 +116,9 @@
   
     <p>As this module has only one pathway and no degrees of freedom for adjustment it can be constructed and attached to the system simply following the designs. The combiner cube is the only part that needs alignment and this is detailed in the <a href="MainBody.html#Construction">Main Body</a> module.</p>
 
-    <p>In principle this sytem can operate at a range of wavelengths. However, the suggested camera suffers from reduced sensitivity through the IR range. As such, poor performance has been observed when operating this system at 1050nm due to low SNR. To achieve a sufficient SNR whilst avoiding clashes with the CRISP system operating at 940nm we recomend operating with 850nm illumination.</p>
+    <p>To add the ImLock to an existing microscope system we recomend adding the second camera after the camera port for simplicity. This can be done easily using products such as CAIRN's <a href="https://www.cairn-research.co.uk/product/twincam/">TwinCam</a>.</p>
+
+    <p>In principle this sytem can operate at a range of wavelengths. However, the suggested camera suffers from reduced sensitivity into the IR range. As such, poor performance has been observed when operating this system at 1050nm due to low SNR. To achieve a sufficient SNR whilst avoiding clashes with the CRISP system operating at 940nm we recomend operating with 850nm illumination.</p>
 
     <img src="Images/IMX250_sensitivity.jpg" width="40%">
 
@@ -124,26 +126,30 @@
 
     <p>This is a MicroManager hardware autofocus plugin developed between the Henriques and Holden laboratories. This plugin will perform microscopy autofocus and lateral drift correction using the cross correlated signal from infrared brightfield microscopy. It is based on the principle described in McGorty et al, Optical Nanoscopy 2013. As such, this software is not coupled to any particular hardware and may be used with cameras and stages other than those described here.</p>
 
+    <p>The original version of the plugin works within a single instance of micromanager. However, when using this with cameras other than the Blackfly camera in the parts-list we frequently see issues. A second version is available that will run in a separate instance of micromanager to the data aquisition which avoids these problems. This version also works with the Blackfly camera so use whichever suits your use best.</p>
+
     <a class="button-design" href="https://github.com/HoldenLab/DeepAutoFocus">&#x1f441; Get Software from GitHub &#x1f441;</a>
 
     <h2>Instructions</h2>
 
     <h3>Installation</h3>
 
+    <p>First make sure you have downloaded the correct version for your camera/workflow.</p>
+
     <p>From the folder "dist" in the GitHub repository, copy "DriftCorrectRH.jar" and the content of the "lib" folder into the Micromanager "plugins/micro-manager" directory. In the case of these files already existing in the target directory, the target directory files should be retained.</p>
 
-    <p>The camera used for this module must be added to a MicroManager config file separate from the main system config file. Instructions are available <a href="https://micro-manager.org/wiki/Spinnaker">here</a> to install the required drivers for the Blackfly camera.</p>
+    <p>The camera used for this module must be added to a MicroManager config file separate from the main system config file. Instructions are available <a href="https://micro-manager.org/wiki/Spinnaker">here</a> to install the correct drivers for the Blackfly camera.</p>
 
-    <p>The plugin may now be launched in MicroManager from "plugins/Beta/NanoJ Online Drift Correction". On opening, the <a href="https://github.com/HoldenLab/LifeHack/blob/master/Operation/BlackflyCamera.cfg">Config file</a> containing the camera's device adapter should be loaded using the "select configuration file" and "load hardware" buttons under the configuration tab.</p>
+    <p>The plugin may now be launched in MicroManager from "plugins/Beta/ImLock". On opening, If using the single instance version, the <a href="https://github.com/HoldenLab/LifeHack/blob/master/Operation/BlackflyCamera.cfg">Config file</a> containing the camera's device adapter should be loaded using the "select configuration file" and "load hardware" buttons under the configuration tab (This will happen automatically on subsequent openings). If using the separate instance version the plugin will use the configuration already loaded by micromanager.</p>
 
     <h3>Use</h3>
 
-    <p>The plugin does not have the ability to trigger the illumination LED so this must be controlled manually. If using this as part of the LifeHack system this can be done through MicroManager. To avoid timeout errors from the stage the Tiger Controller's MAINTAIN(MA) setting within Micromanager needs to be set to "3 - Motors on during wait time"</p>
+    <p>The plugin does not have the ability to trigger the illumination LED so this must be controlled manually. If using this as part of the LifeHack system this can be done through MicroManager. Our testing has been conducted with the Tiger Controller's MAINTAIN(MA) setting within Micromanager needs to be set to "3 - Motors on during wait time"</p>
 	
 	  <img src="Images/DriftCorrect.jpg" width="100%">
 	
 	  <p>To use the plugin, First "get background image" to perform background subtraction. The stage will scan around the sample to record multiple fields of view for averaging.</p>
-	  <p>Next "calibrate pixel size" to calculate the pixels-to-nm conversion factor. The stage will move laterally in user-defined steps and calculate the pixel displacements by cross-correlation.</p>
+	  <p>Next "calibrate pixel size" to calculate the pixels-to-nm conversion factor and axis orientations. The stage will move laterally in user-defined steps and calculate the pixel displacements by cross-correlation.</p>
 	  <p>"Start" takes a reference z-stack (if using XYZ or Z correction) or a single reference image (if using XY correction) and begins the drift correction protocol selected using the pulldown menu.</p>
 	  <p>If "Save drift data to file" is ticked, positions will be saved in a columnwise ".csv" file with columns "time, x, y, z".</p>
 	
