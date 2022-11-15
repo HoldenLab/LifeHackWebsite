@@ -89,7 +89,7 @@
     <hr> 
     <p>Project Contributors: Josh Edwards, Kevin Whitley, Sudeer Peneti, Yann Cesbron, Seamus Holden</p>
     <p>Website by Josh Edwards</p>
-    <p>Updated: May 2021</p>
+    <p>Updated: November 2022</p>
   </div>
 
   <div class="page">
@@ -141,19 +141,19 @@
     <div id="JE-CAIRN" class="tabcontent">
       <h3>Installation</h3>
 
-      <p>First make sure you have downloaded the correct version for your camera/workflow.</p>
+      <p>This is the primary version of ImLock. It is designed to work within a single instance of micromanager alongside data collection. Testing with a few cameras has yielded mixed results so if this fails with your camera please try the other version.</p>
   
       <p>From the folder "dist" in the GitHub repository, copy "ImLock.jar" and the content of the "lib" folder into the Micromanager "plugins/micro-manager" directory. In the case of these files already existing in the target directory, the target directory files should be retained.</p>
   
-      <p>The camera used for this module must be added to a MicroManager config file separate from the main system config file, if using the separate instance version the stage needs to be added as well. Instructions are available <a href="https://micro-manager.org/wiki/Spinnaker">here</a> to install the correct drivers for the Blackfly camera.</p>
+      <p>The camera used for this module must be added to a MicroManager config file separate from the main system config file. Instructions are available <a href="https://micro-manager.org/wiki/Spinnaker">here</a> to install the correct drivers for the Blackfly camera.</p>
   
-      <p>The plugin may now be launched in MicroManager from "plugins/Beta/ImLock". On opening, If using the single instance version, the <a href="https://github.com/HoldenLab/LifeHack/blob/master/Operation/BlackflyCamera.cfg">Config file</a> containing the camera's device adapter should be loaded using the "select configuration file" and "load hardware" buttons under the configuration tab (This will happen automatically on subsequent openings). If using the separate instance version the plugin will use the configuration already loaded by micromanager.</p>
+      <p>The plugin may now be launched in MicroManager from "plugins/Beta/ImLock". On opening the <a href="https://github.com/HoldenLab/LifeHack/blob/master/Operation/BlackflyCamera.cfg">Config file</a> containing the camera's device adapter should be loaded using the "select configuration file" and "load hardware" buttons under the configuration tab (This will happen automatically on subsequent openings).</p>
   
       <h3>Use</h3>
   
       <p>The plugin does not have the ability to trigger the illumination LED so this must be controlled manually. If using this as part of the LifeHack system this can be done through MicroManager. Our testing has been conducted with the Tiger Controller's MAINTAIN(MA) setting set to "3 - Motors on during wait time".</p>
     
-      <img src="Images/DriftCorrect.jpg" width="100%">
+      <img src="Images/ImLock_JE_CAIRN.png" width="100%">
     
       <p>To use the plugin, First "get background image" to perform background subtraction. The stage will scan around the sample to record multiple fields of view for averaging.</p>
       <p>Next "calibrate pixel size" to calculate the pixels-to-nm conversion factor and axis orientations. The stage will move laterally in user-defined steps and calculate the pixel displacements by cross-correlation.</p>
@@ -194,7 +194,7 @@
   
       <p>The plugin does not have the ability to trigger the illumination LED so this must be controlled manually. If using this as part of the LifeHack system this can be done through MicroManager. Our testing has been conducted with the Tiger Controller's MAINTAIN(MA) setting set to "3 - Motors on during wait time".</p>
     
-      <img src="Images/DriftCorrect.jpg" width="100%">
+      <img src="Images/ImLock_SingleCore.png" width="100%">
     
       <p>To use the plugin, First "get background image" to perform background subtraction. The stage will scan around the sample to record multiple fields of view for averaging.</p>
       <p>Next "calibrate pixel size" to calculate the pixels-to-nm conversion factor and axis orientations. The stage will move laterally in user-defined steps and calculate the pixel displacements by cross-correlation.</p>
