@@ -130,45 +130,94 @@
 
     <a class="button-design" href="https://github.com/HoldenLab/DeepAutoFocus">&#x1f441; Get Software from GitHub &#x1f441;</a>
 
-    <h2>Instructions</h2>
+    <h2>Instructions: Please select a version</h2>
 
-    <h3>Installation</h3>
+    <div class="tab">
+      <button class="tablinks" onclick="openVersion(event, 'JE-CAIRN')">JE-CAIRN</button>
+      <button class="tablinks" onclick="openVersion(event, 'Single-Core')">Single Core</button>
+    </div>
+    
+    <!-- Tab content -->
+    <div id="JE-CAIRN" class="tabcontent">
+      <h3>Installation</h3>
 
-    <p>First make sure you have downloaded the correct version for your camera/workflow.</p>
+      <p>First make sure you have downloaded the correct version for your camera/workflow.</p>
+  
+      <p>From the folder "dist" in the GitHub repository, copy "ImLock.jar" and the content of the "lib" folder into the Micromanager "plugins/micro-manager" directory. In the case of these files already existing in the target directory, the target directory files should be retained.</p>
+  
+      <p>The camera used for this module must be added to a MicroManager config file separate from the main system config file, if using the separate instance version the stage needs to be added as well. Instructions are available <a href="https://micro-manager.org/wiki/Spinnaker">here</a> to install the correct drivers for the Blackfly camera.</p>
+  
+      <p>The plugin may now be launched in MicroManager from "plugins/Beta/ImLock". On opening, If using the single instance version, the <a href="https://github.com/HoldenLab/LifeHack/blob/master/Operation/BlackflyCamera.cfg">Config file</a> containing the camera's device adapter should be loaded using the "select configuration file" and "load hardware" buttons under the configuration tab (This will happen automatically on subsequent openings). If using the separate instance version the plugin will use the configuration already loaded by micromanager.</p>
+  
+      <h3>Use</h3>
+  
+      <p>The plugin does not have the ability to trigger the illumination LED so this must be controlled manually. If using this as part of the LifeHack system this can be done through MicroManager. Our testing has been conducted with the Tiger Controller's MAINTAIN(MA) setting set to "3 - Motors on during wait time".</p>
+    
+      <img src="Images/DriftCorrect.jpg" width="100%">
+    
+      <p>To use the plugin, First "get background image" to perform background subtraction. The stage will scan around the sample to record multiple fields of view for averaging.</p>
+      <p>Next "calibrate pixel size" to calculate the pixels-to-nm conversion factor and axis orientations. The stage will move laterally in user-defined steps and calculate the pixel displacements by cross-correlation.</p>
+      <p>"Start" takes a reference z-stack (if using XYZ or Z correction) or a single reference image (if using XY correction) and begins the drift correction protocol selected using the pulldown menu.</p>
+      <p>The tick-box options on the control panel are mostly self explanitory. "Tuning mode" modifies the behaviour of "Show drift plots". If "Tuning mode" is unticked the plots are of the cumulative corrections made in each dimension, if ticked the plots are of the live reading of position to aid with settings gains(described in "Variables").</p>
+      <p>If "Save drift data to file" is ticked, positions will be saved in a columnwise ".csv" file with columns "time, x, y, z".</p>
+    
+      <h3>Variables</h3>
+      <ul>
+        <li><b>Background subtraction step size:</b> Lateral move between background subtraction images. We find that a step size of 50 um works well.</li>
+        <li><b>Calibration step size:</b> Lateral move between images during the pixels-to-nm calibration routine. We find that a step size of 1-5 um works well.</li>
+        <li><b>Exposure time:</b> Exposure time of the camera, should be balanced to minimise LED power and motion blur.</li>
+        <li><b>Maximum ROI to analyse:</b> Sets the size of the area to perform cross-correlation on. The limits of this are camera-dependent. Larger fields of view will require more processing time but use more of the sample to lock on to.</li>
+        <li><b>Pixels to trim from edges:</b> Removes edge pixels from cross-correlation calculations. Can be used to speed up processing if the camera has a minumum ROI limit.</li>
+        <li><b>Step size for Z correction:</b> Sets the depth between the images of the reference z-stack taken at the beginning of a run.</li>
+        <li><b>Zp (Axial proportional gain):</b> Proportional gain sets the strength of correction relative to the position error. higher values will cause faster responses but can lead to overcorrections. A value of 1 is a good starting point</li>
+        <li><b>Zi (Axial integral gain):</b> Integral gain used to correct for a stable offset from the zero position. Can induce oscillations if too strong. Often this value can be left at 0</li>
+        <li><b>Lp (Lateral proportional gain):</b> Proportional gain sets the strength of correction relative to the position error. higher values will cause faster responses but can lead to overcorrections. A value of 1 is a good starting point</li>
+        <li><b>Li (Lateral integral gain):</b> Integral gain used to correct for a stable offset from the zero position. Can induce oscillations if too strong. Often this value can be left at 0</li>
+        <li><b>Time between corrections:</b> Sets the dwell time between stage corrections to avoid high frequency corrections to noise. Must be set greater than the set exposure time.</li>
+        <li><b>Maximum translation:</b> Limit on shift to prevent stage crashing.</li>
+      </ul>
+  
+    </div>
+    
+    <div id="Single-Core" class="tabcontent">
+      <h3>Installation</h3>
 
-    <p>From the folder "dist" in the GitHub repository, copy "ImLock.jar" and the content of the "lib" folder into the Micromanager "plugins/micro-manager" directory. In the case of these files already existing in the target directory, the target directory files should be retained.</p>
-
-    <p>The camera used for this module must be added to a MicroManager config file separate from the main system config file, if using the separate instance version the stage needs to be added as well. Instructions are available <a href="https://micro-manager.org/wiki/Spinnaker">here</a> to install the correct drivers for the Blackfly camera.</p>
-
-    <p>The plugin may now be launched in MicroManager from "plugins/Beta/ImLock". On opening, If using the single instance version, the <a href="https://github.com/HoldenLab/LifeHack/blob/master/Operation/BlackflyCamera.cfg">Config file</a> containing the camera's device adapter should be loaded using the "select configuration file" and "load hardware" buttons under the configuration tab (This will happen automatically on subsequent openings). If using the separate instance version the plugin will use the configuration already loaded by micromanager.</p>
-
-    <h3>Use</h3>
-
-    <p>The plugin does not have the ability to trigger the illumination LED so this must be controlled manually. If using this as part of the LifeHack system this can be done through MicroManager. Our testing has been conducted with the Tiger Controller's MAINTAIN(MA) setting set to "3 - Motors on during wait time".</p>
-	
-	  <img src="Images/DriftCorrect.jpg" width="100%">
-	
-	  <p>To use the plugin, First "get background image" to perform background subtraction. The stage will scan around the sample to record multiple fields of view for averaging.</p>
-	  <p>Next "calibrate pixel size" to calculate the pixels-to-nm conversion factor and axis orientations. The stage will move laterally in user-defined steps and calculate the pixel displacements by cross-correlation.</p>
-	  <p>"Start" takes a reference z-stack (if using XYZ or Z correction) or a single reference image (if using XY correction) and begins the drift correction protocol selected using the pulldown menu.</p>
-	  <p>The tick-box options on the control panel are mostly self explanitory. "Tuning mode" modifies the behaviour of "Show drift plots". If "Tuning mode" is unticked the plots are of the cumulative corrections made in each dimension, if ticked the plots are of the live reading of position to aid with settings gains(described in "Variables").</p>
-    <p>If "Save drift data to file" is ticked, positions will be saved in a columnwise ".csv" file with columns "time, x, y, z".</p>
-	
-	  <h3>Variables</h3>
-	  <ul>
-	    <li><b>Background subtraction step size:</b> Lateral move between background subtraction images. We find that a step size of 50 um works well.</li>
-	    <li><b>Calibration step size:</b> Lateral move between images during the pixels-to-nm calibration routine. We find that a step size of 1-5 um works well.</li>
-	    <li><b>Exposure time:</b> Exposure time of the camera, should be balanced to minimise LED power and motion blur.</li>
-	    <li><b>Maximum ROI to analyse:</b> Sets the size of the area to perform cross-correlation on. The limits of this are camera-dependent. Larger fields of view will require more processing time but use more of the sample to lock on to.</li>
-	    <li><b>Pixels to trim from edges:</b> Removes edge pixels from cross-correlation calculations. Can be used to speed up processing if the camera has a minumum ROI limit.</li>
-	    <li><b>Step size for Z correction:</b> Sets the depth between the images of the reference z-stack taken at the beginning of a run.</li>
-	    <li><b>Zp (Axial proportional gain):</b> Proportional gain sets the strength of correction relative to the position error. higher values will cause faster responses but can lead to overcorrections. A value of 1 is a good starting point</li>
-	    <li><b>Zi (Axial integral gain):</b> Integral gain used to correct for a stable offset from the zero position. Can induce oscillations if too strong. Often this value can be left at 0</li>
-      <li><b>Lp (Lateral proportional gain):</b> Proportional gain sets the strength of correction relative to the position error. higher values will cause faster responses but can lead to overcorrections. A value of 1 is a good starting point</li>
-      <li><b>Li (Lateral integral gain):</b> Integral gain used to correct for a stable offset from the zero position. Can induce oscillations if too strong. Often this value can be left at 0</li>
-      <li><b>Time between corrections:</b> Sets the dwell time between stage corrections to avoid high frequency corrections to noise. Must be set greater than the set exposure time.</li>
-	    <li><b>Maximum translation:</b> Limit on shift to prevent stage crashing.</li>
-	  </ul>
+      <p>First make sure you have downloaded the correct version for your camera/workflow.</p>
+  
+      <p>From the folder "dist" in the GitHub repository, copy "ImLock.jar" and the content of the "lib" folder into the Micromanager "plugins/micro-manager" directory. In the case of these files already existing in the target directory, the target directory files should be retained.</p>
+  
+      <p>The camera used for this module must be added to a MicroManager config file separate from the main system config file, if using the separate instance version the stage needs to be added as well. Instructions are available <a href="https://micro-manager.org/wiki/Spinnaker">here</a> to install the correct drivers for the Blackfly camera.</p>
+  
+      <p>The plugin may now be launched in MicroManager from "plugins/Beta/ImLock". On opening, If using the single instance version, the <a href="https://github.com/HoldenLab/LifeHack/blob/master/Operation/BlackflyCamera.cfg">Config file</a> containing the camera's device adapter should be loaded using the "select configuration file" and "load hardware" buttons under the configuration tab (This will happen automatically on subsequent openings). If using the separate instance version the plugin will use the configuration already loaded by micromanager.</p>
+  
+      <h3>Use</h3>
+  
+      <p>The plugin does not have the ability to trigger the illumination LED so this must be controlled manually. If using this as part of the LifeHack system this can be done through MicroManager. Our testing has been conducted with the Tiger Controller's MAINTAIN(MA) setting set to "3 - Motors on during wait time".</p>
+    
+      <img src="Images/DriftCorrect.jpg" width="100%">
+    
+      <p>To use the plugin, First "get background image" to perform background subtraction. The stage will scan around the sample to record multiple fields of view for averaging.</p>
+      <p>Next "calibrate pixel size" to calculate the pixels-to-nm conversion factor and axis orientations. The stage will move laterally in user-defined steps and calculate the pixel displacements by cross-correlation.</p>
+      <p>"Start" takes a reference z-stack (if using XYZ or Z correction) or a single reference image (if using XY correction) and begins the drift correction protocol selected using the pulldown menu.</p>
+      <p>The tick-box options on the control panel are mostly self explanitory. "Tuning mode" modifies the behaviour of "Show drift plots". If "Tuning mode" is unticked the plots are of the cumulative corrections made in each dimension, if ticked the plots are of the live reading of position to aid with settings gains(described in "Variables").</p>
+      <p>If "Save drift data to file" is ticked, positions will be saved in a columnwise ".csv" file with columns "time, x, y, z".</p>
+    
+      <h3>Variables</h3>
+      <ul>
+        <li><b>Background subtraction step size:</b> Lateral move between background subtraction images. We find that a step size of 50 um works well.</li>
+        <li><b>Calibration step size:</b> Lateral move between images during the pixels-to-nm calibration routine. We find that a step size of 1-5 um works well.</li>
+        <li><b>Exposure time:</b> Exposure time of the camera, should be balanced to minimise LED power and motion blur.</li>
+        <li><b>Maximum ROI to analyse:</b> Sets the size of the area to perform cross-correlation on. The limits of this are camera-dependent. Larger fields of view will require more processing time but use more of the sample to lock on to.</li>
+        <li><b>Pixels to trim from edges:</b> Removes edge pixels from cross-correlation calculations. Can be used to speed up processing if the camera has a minumum ROI limit.</li>
+        <li><b>Step size for Z correction:</b> Sets the depth between the images of the reference z-stack taken at the beginning of a run.</li>
+        <li><b>Zp (Axial proportional gain):</b> Proportional gain sets the strength of correction relative to the position error. higher values will cause faster responses but can lead to overcorrections. A value of 1 is a good starting point</li>
+        <li><b>Zi (Axial integral gain):</b> Integral gain used to correct for a stable offset from the zero position. Can induce oscillations if too strong. Often this value can be left at 0</li>
+        <li><b>Lp (Lateral proportional gain):</b> Proportional gain sets the strength of correction relative to the position error. higher values will cause faster responses but can lead to overcorrections. A value of 1 is a good starting point</li>
+        <li><b>Li (Lateral integral gain):</b> Integral gain used to correct for a stable offset from the zero position. Can induce oscillations if too strong. Often this value can be left at 0</li>
+        <li><b>Time between corrections:</b> Sets the dwell time between stage corrections to avoid high frequency corrections to noise. Must be set greater than the set exposure time.</li>
+        <li><b>Maximum translation:</b> Limit on shift to prevent stage crashing.</li>
+      </ul>
+    </div>
 
   </div>
 
@@ -190,6 +239,21 @@
         navbar.classList.remove("sticky");
       }
     }
+
+    function openVersion(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
     </script>
 
   </body>

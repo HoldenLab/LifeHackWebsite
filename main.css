@@ -58,6 +58,7 @@ body, html {
     font-size: 22pt;
     position: fixed;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
   }
   
   .button:hover {
@@ -79,6 +80,7 @@ body, html {
     font-size: 13pt;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 4px;
+    transition: 0.3s;
   }
   
   .button-design:hover {
@@ -133,6 +135,7 @@ body, html {
     font-size: 0.9vw;
     color: #f2f2f2;
     display: block;
+    transition: 0.3s;
   }
   
   .sidenav a:hover {
@@ -206,6 +209,7 @@ body, html {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 12px;
+    transition: 0.3s;
   }
 
   .figcaption {
@@ -248,6 +252,7 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: 0.3s;
   }
     
   #navbar a:hover {
@@ -268,4 +273,50 @@ body, html {
   
   .sticky  + .sidenav {
     margin-top: 1.9cm;
+  }
+
+  .tab {
+    overflow: hidden;
+    border: none;
+    background-color: #333;
+    border-radius: 4px;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    width: 50%;
+    font-size: 22px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ddd;
+    color: black;
+    border-width: 1px;
+    /*border-style: solid;
+    border-collapse: separate;
+    border-color: black;*/
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: none;
+    border-top: none;
   }
