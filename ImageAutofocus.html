@@ -128,20 +128,21 @@
 
     <p>The original version of the plugin works within a single instance of micromanager. However, when using this with cameras other than the Blackfly camera in the parts-list we frequently see issues. A second version is available that will run in a separate instance of micromanager to the data aquisition which avoids these problems. This version also works with the Blackfly camera so use whichever suits you best.</p>
 
-    <a class="button-design" href="https://github.com/HoldenLab/DeepAutoFocus">&#x1f441; Get Software from GitHub &#x1f441;</a>
-
     <h2>Instructions: Please select a version</h2>
 
     <div class="tab">
-      <button class="tablinks" onclick="openVersion(event, 'JE-CAIRN')">JE-CAIRN</button>
+      <button class="tablinks" onclick="openVersion(event, 'JE-CAIRN')" id="defaultOpen">JE-CAIRN</button>
       <button class="tablinks" onclick="openVersion(event, 'Single-Core')">Single Core</button>
     </div>
     
     <!-- Tab content -->
     <div id="JE-CAIRN" class="tabcontent">
-      <h3>Installation</h3>
 
       <p>This is the primary version of ImLock. It is designed to work within a single instance of micromanager alongside data collection. Testing with a few cameras has yielded mixed results so if this fails with your camera please try the other version.</p>
+
+      <h3>Installation</h3>
+
+      <a class="button-design" href="https://github.com/HoldenLab/DeepAutoFocus">&#x1f441; Get Software from GitHub &#x1f441;</a>
   
       <p>From the folder "dist" in the GitHub repository, copy "ImLock.jar" and the content of the "lib" folder into the Micromanager "plugins/micro-manager" directory. In the case of these files already existing in the target directory, the target directory files should be retained.</p>
   
@@ -174,6 +175,7 @@
         <li><b>Lp (Lateral proportional gain):</b> Proportional gain sets the strength of correction relative to the position error. higher values will cause faster responses but can lead to overcorrections. A value of 1 is a good starting point</li>
         <li><b>Li (Lateral integral gain):</b> Integral gain used to correct for a stable offset from the zero position. Can induce oscillations if too strong. Often this value can be left at 0</li>
         <li><b>Time between corrections:</b> Sets the dwell time between stage corrections to avoid high frequency corrections to noise. Must be set greater than the set exposure time.</li>
+        <li><b>Time between reference updates:</b> Sets the time between updates to the reference stack. Useful if your sample changes significantly over time. Setting to 0 turns this feature off.</li>
         <li><b>Maximum translation:</b> Limit on shift to prevent stage crashing.</li>
       </ul>
   
@@ -182,13 +184,15 @@
     <div id="Single-Core" class="tabcontent">
       <h3>Installation</h3>
 
-      <p>First make sure you have downloaded the correct version for your camera/workflow.</p>
+      <p>This is a secondary version designed to work robustly with any camera normally supported by Micro-Manager. It is designed to work within a second instance of Micro-Manager seperate to data collection. Working in separate Micro-Manager instances means some features require additional hardware so try the other version first.</p>
+
+      <a class="button-design" href="https://github.com/HoldenLab/DeepAutoFocus">&#x1f441; Get Software from GitHub &#x1f441;</a>
   
       <p>From the folder "dist" in the GitHub repository, copy "ImLock.jar" and the content of the "lib" folder into the Micromanager "plugins/micro-manager" directory. In the case of these files already existing in the target directory, the target directory files should be retained.</p>
   
-      <p>The camera used for this module must be added to a MicroManager config file separate from the main system config file, if using the separate instance version the stage needs to be added as well. Instructions are available <a href="https://micro-manager.org/wiki/Spinnaker">here</a> to install the correct drivers for the Blackfly camera.</p>
+      <p>The camera and stages used must be added to a MicroManager config file. Use this config file when launching Micro-Manager.</p>
   
-      <p>The plugin may now be launched in MicroManager from "plugins/Beta/ImLock". On opening, If using the single instance version, the <a href="https://github.com/HoldenLab/LifeHack/blob/master/Operation/BlackflyCamera.cfg">Config file</a> containing the camera's device adapter should be loaded using the "select configuration file" and "load hardware" buttons under the configuration tab (This will happen automatically on subsequent openings). If using the separate instance version the plugin will use the configuration already loaded by micromanager.</p>
+      <p>The plugin may now be launched in MicroManager from "plugins/Beta/ImLock". On opening the plugin will use the configuration already loaded by micromanager.</p>
   
       <h3>Use</h3>
   
@@ -217,8 +221,21 @@
         <li><b>Time between corrections:</b> Sets the dwell time between stage corrections to avoid high frequency corrections to noise. Must be set greater than the set exposure time.</li>
         <li><b>Maximum translation:</b> Limit on shift to prevent stage crashing.</li>
       </ul>
-    </div>
 
+      <h3>Multi-Dimensional Acquisitions (Optional)</h3>
+
+      <p>To perform imaging across multiple fields of view and or Z-stacks while using this version of ImLock, add an Arduino uno to the Micro-Manager config file. This will need to be set up as an "Arduino-Input" device with the input wired as below.</p>
+  
+      <img src="Images/PlaceHolder.jpg" width="50%">
+  
+      <p>Upon opening the ImLock plugin go to the configuration panel and select the Arduino using the "Trigger" pulldown. The plugin is now set up to recieve external interupt commands via the Arduino.</p>
+  
+      <p>If using Micro-Manager for data collection you will need to add a second arduino to the config file for the data collection instance of Micro-Manager. This will need to be set up as an "Arduino-Shutter" device with the output wired as below. Within Micromanager set this up as a Multi-shutter device with your acquisition shutter so that the two are triggered together. Connect this Arduino to the first Arduino as its input and the two instances of micromanager will be able to talk to eachother.</p>
+  
+      <img src="Images/PlaceHolder.jpg" width="50%">
+      
+      <p>If you are using other software you will need your own way of providing the interupt signals to the input Arduino, <a href=https://www.cairn-research.co.uk>cairn-research</a> may be able to help with this.</p>
+    </div> 
   </div>
 
   <div class="bottomnav">
@@ -254,6 +271,7 @@
       evt.currentTarget.className += " active";
     }
 
+    document.getElementById("defaultOpen").click();
     </script>
 
   </body>
