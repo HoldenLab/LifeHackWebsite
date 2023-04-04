@@ -133,12 +133,12 @@
     <h2>Instructions: Please select a version</h2>
 
     <div class="tab">
-      <button class="tablinks" onclick="openVersion(event, 'JE-CAIRN')">JE-CAIRN</button>
+      <button class="tablinks" onclick="openVersion(event, 'Main')">Main</button>
       <button class="tablinks" onclick="openVersion(event, 'Single-Core')">Single Core</button>
     </div>
     
     <!-- Tab content -->
-    <div id="JE-CAIRN" class="tabcontent">
+    <div id="Main" class="tabcontent">
 
       <p>This is the primary version of ImLock. It is designed to work within a single instance of micromanager alongside data collection. Testing with a few cameras has yielded mixed results so if this fails with your camera please try the other version.</p>
 
@@ -226,15 +226,13 @@
 
       <h3>Multi-Dimensional Acquisitions (Optional)</h3>
 
-      <p>To perform imaging across multiple fields of view and or Z-stacks while using this version of ImLock, add an Arduino uno to the Micro-Manager config file. This will need to be set up as an "Arduino-Input" device with the input wired as below.</p>
-  
-      <img src="Images/ImLock_Arduino.png" width="50%">
+      <p>To perform imaging across multiple fields of view and or Z-stacks while using this version of ImLock, add an Arduino uno to the Micro-Manager config file. This will need to be set up as an "Arduino-Input" device.</p>
   
       <p>Upon opening the ImLock plugin go to the configuration panel and select the Arduino using the "Trigger" pulldown. The plugin is now set up to recieve external interupt commands via the Arduino.</p>
   
       <p>If using Micro-Manager for data collection you will need to add a second arduino to the config file for the data collection instance of Micro-Manager. This will need to be set up as an "Arduino-Shutter" device with the output wired as below. Within Micromanager set this up as a Multi-shutter device with your acquisition shutter so that the two are triggered together. Connect this Arduino to the first Arduino as its input and the two instances of micromanager will be able to talk to eachother.</p>
   
-      <img src="Images/PlaceHolder.jpg" width="50%">
+      <img src="Images/ImLock_Arduino.png" width="50%">
       
       <p>If you are using other software you will need your own way of providing the interupt signals to the input Arduino, <a href=https://www.cairn-research.co.uk>cairn-research</a> may be able to help with this.</p>
     </div> 
