@@ -89,7 +89,7 @@
     <hr> 
     <p>Project Contributors: Josh Edwards, Kevin Whitley, Sudeer Peneti, Yann Cesbron, Seamus Holden</p>
     <p>Website by Josh Edwards</p>
-    <p>Updated: November 2022</p>
+    <p>Updated: April 2023</p>
   </div>
 
   <div class="page">
@@ -161,10 +161,11 @@
       <p>To use the plugin, First "get background image" to perform background subtraction. The stage will scan around the sample to record multiple fields of view for averaging.</p>
       <p>Next "calibrate pixel size" to calculate the pixels-to-nm conversion factor and axis orientations. The stage will move laterally in user-defined steps and calculate the pixel displacements by cross-correlation.</p>
       <p>"Start" takes a reference z-stack (if using XYZ or Z correction) or a single reference image (if using XY correction) and begins the drift correction protocol selected using the pulldown menu.</p>
-      <p>The tick-box options on the control panel are mostly self explanitory. "Tuning mode" modifies the behaviour of "Show drift plots". If "Tuning mode" is unticked the plots are of the cumulative corrections made in each dimension, if ticked the plots are of the live reading of position to aid with settings gains(described in "Variables").</p>
+      <p>The tick-box options on the control panel are mostly self explanitory. "Show drift plots" produces plots of the live position reading to aid with setting gains(described in "Variables").</p>
       <p>If "Save drift data to file" is ticked, positions will be saved in a columnwise ".csv" file with columns "time, x, y, z".</p>
     
       <h3>Variables</h3>
+      <h4>Configuration Tab</h4>
       <ul>
         <li><b>Background subtraction step size:</b> Lateral move between background subtraction images. We find that a step size of 50 um works well.</li>
         <li><b>Calibration step size:</b> Lateral move between images during the pixels-to-nm calibration routine. We find that a step size of 1-5 um works well.</li>
@@ -180,7 +181,12 @@
         <li><b>Time between reference updates:</b> Sets the time between updates to the reference stack. Useful if your sample changes significantly over time. Setting to 0 turns this feature off.</li>
         <li><b>Maximum translation:</b> Limit on shift to prevent stage crashing.</li>
       </ul>
-  
+      <h4>Advanced Tab</h4>
+      <ul>
+        <li><b>Lateral Gain Bias:</b> Bias of gain between X and Y axies. Positive values bias towards X and negative towards Y. Should not be needed for most systems.</li>
+        <li><b>Axial Dead Zone (nm):</b> Minimum move command that will be sent to the Z stage. Any smaller corrections will be ignored. Useful for stages with poor encoder resolution (usually not needed for piezo stages). Set to the same as the encoder resolution if you see odd behaviour when set to 0.</li>
+        <li><b>Lateral Dead Zone (nm):</b> Minimum move command that will be sent to the XY stage. Any smaller corrections will be ignored. Useful for stages with poor encoder resolution. Set to the same as the encoder resolution if you see odd behaviour when set to 0.</li>
+      </ul>
     </div>
     
     <div id="Single-Core" class="tabcontent">
@@ -205,10 +211,11 @@
       <p>To use the plugin, First "get background image" to perform background subtraction. The stage will scan around the sample to record multiple fields of view for averaging.</p>
       <p>Next "calibrate pixel size" to calculate the pixels-to-nm conversion factor and axis orientations. The stage will move laterally in user-defined steps and calculate the pixel displacements by cross-correlation.</p>
       <p>"Start" takes a reference z-stack (if using XYZ or Z correction) or a single reference image (if using XY correction) and begins the drift correction protocol selected using the pulldown menu.</p>
-      <p>The tick-box options on the control panel are mostly self explanitory. "Tuning mode" modifies the behaviour of "Show drift plots". If "Tuning mode" is unticked the plots are of the cumulative corrections made in each dimension, if ticked the plots are of the live reading of position to aid with settings gains(described in "Variables").</p>
+      <p>The tick-box options on the control panel are mostly self explanitory. "Show drift plots" produces plots of the live position reading to aid with setting gains(described in "Variables").</p>
       <p>If "Save drift data to file" is ticked, positions will be saved in a columnwise ".csv" file with columns "time, x, y, z".</p>
     
       <h3>Variables</h3>
+      <h4>Configuration Tab</h4>
       <ul>
         <li><b>Background subtraction step size:</b> Lateral move between background subtraction images. We find that a step size of 50 um works well.</li>
         <li><b>Calibration step size:</b> Lateral move between images during the pixels-to-nm calibration routine. We find that a step size of 1-5 um works well.</li>
@@ -221,7 +228,14 @@
         <li><b>Lp (Lateral proportional gain):</b> Proportional gain sets the strength of correction relative to the position error. higher values will cause faster responses but can lead to overcorrections. A value of 1 is a good starting point</li>
         <li><b>Li (Lateral integral gain):</b> Integral gain used to correct for a stable offset from the zero position. Can induce oscillations if too strong. Often this value can be left at 0</li>
         <li><b>Time between corrections:</b> Sets the dwell time between stage corrections to avoid high frequency corrections to noise. Must be set greater than the set exposure time.</li>
+        <li><b>Time between reference updates:</b> Sets the time between updates to the reference stack. Useful if your sample changes significantly over time. Setting to 0 turns this feature off.</li>
         <li><b>Maximum translation:</b> Limit on shift to prevent stage crashing.</li>
+      </ul>
+      <h4>Advanced Tab</h4>
+      <ul>
+        <li><b>Lateral Gain Bias:</b> Bias of gain between X and Y axies. Positive values bias towards X and negative towards Y. Should not be needed for most systems.</li>
+        <li><b>Axial Dead Zone (nm):</b> Minimum move command that will be sent to the Z stage. Any smaller corrections will be ignored. Useful for stages with poor encoder resolution (usually not needed for piezo stages). Set to the same as the encoder resolution if you see odd behaviour when set to 0.</li>
+        <li><b>Lateral Dead Zone (nm):</b> Minimum move command that will be sent to the XY stage. Any smaller corrections will be ignored. Useful for stages with poor encoder resolution. Set to the same as the encoder resolution if you see odd behaviour when set to 0.</li>
       </ul>
 
       <h3>Multi-Dimensional Acquisitions (Optional)</h3>
