@@ -137,7 +137,6 @@
       <button class="tablinks" onclick="openVersion(event, 'Single-Core')">Single Core</button>
     </div>
     
-    <!-- Tab content -->
     <div id="Main" class="tabcontent">
 
       <p>This is the primary version of ImLock. It is designed to work within a single instance of micromanager alongside data collection. Testing with a few cameras has yielded mixed results so if this fails with your camera please try the other version.</p>
@@ -164,10 +163,13 @@
       <p>The tick-box options on the control panel are mostly self explanitory. "Show drift plots" produces plots of the live position reading to aid with setting gains(described in "Variables").</p>
       <p>If "Save drift data to file" is ticked, positions will be saved in a columnwise ".csv" file with columns "time, x, y, z".</p>
 
-      <h4>Complex Experiments</h4>
-      <p>The ImLock is capable of working with Z stacking and XY scanning timelapse experiments as long as the interval between time points is >5 seconds.</p>
+      <h3>Complex Experiments</h3>
+
+      <p>The ImLock is capable of working with Z stacking and XY scanning timelapse experiments as long as the interval between time points is >5 seconds. Drift corrections will be made between the acquisition time points and the acquisition's position list updated to apply these corrections to every FOV.</p>
+
+      <p>If you wish to conduct long timelapse experiments on live samples that will change substantially over time the initial calibration stack will become obsolete. The ImLock can be set to re-record the calibration stack at set intervals through the experiment to keep it relevant. If the interval between the experiment's time points is >5 seconds this will be done between time points so as not to disrupt the experiment.</p>
     
-      <h3>Variables</h3>
+      <h3>Settings</h3>
       <h4>Configuration Tab</h4>
       <ul>
         <li><b>Background subtraction step size:</b> Lateral move between background subtraction images. We find that a step size of 50 um works well.</li>
@@ -217,7 +219,7 @@
       <p>The tick-box options on the control panel are mostly self explanitory. "Show drift plots" produces plots of the live position reading to aid with setting gains(described in "Variables").</p>
       <p>If "Save drift data to file" is ticked, positions will be saved in a columnwise ".csv" file with columns "time, x, y, z".</p>
     
-      <h3>Variables</h3>
+      <h3>Settings</h3>
       <h4>Configuration Tab</h4>
       <ul>
         <li><b>Background subtraction step size:</b> Lateral move between background subtraction images. We find that a step size of 50 um works well.</li>
