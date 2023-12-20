@@ -163,6 +163,9 @@
       <p>"Start" takes a reference z-stack (if using XYZ or Z correction) or a single reference image (if using XY correction) and begins the drift correction protocol selected using the pulldown menu.</p>
       <p>The tick-box options on the control panel are mostly self explanitory. "Show drift plots" produces plots of the live position reading to aid with setting gains(described in "Variables").</p>
       <p>If "Save drift data to file" is ticked, positions will be saved in a columnwise ".csv" file with columns "time, x, y, z".</p>
+
+      <h4>Complex Experiments</h4>
+      <p>The ImLock is capable of working with Z stacking and XY scanning timelapse experiments as long as the interval between time points is >5 seconds.</p>
     
       <h3>Variables</h3>
       <h4>Configuration Tab</h4>
@@ -179,7 +182,7 @@
         <li><b>Li (Lateral integral gain):</b> Integral gain used to correct for a stable offset from the zero position. Can induce oscillations if too strong. Often this value can be left at 0</li>
         <li><b>Time between corrections:</b> Sets the dwell time between stage corrections to avoid high frequency corrections to noise. Must be set greater than the set exposure time.</li>
         <li><b>Time between reference updates:</b> Sets the time between updates to the reference stack. Useful if your sample changes significantly over time. Setting to 0 turns this feature off.</li>
-        <li><b>Maximum translation:</b> Limit on shift to prevent stage crashing.</li>
+        <li><b>Maximum translation:</b> Limit on correction size to prevent stage crashing.</li>
       </ul>
       <h4>Advanced Tab</h4>
       <ul>
